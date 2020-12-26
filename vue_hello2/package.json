@@ -17,6 +17,9 @@
     "bootstrap": "^3.3.7",
     "cross-env": "^7.0.3",
     "laravel-mix": "^4.1.4",
+    "node-sass": "^5.0.0",
+    "resolve-url-loader": "^3.1.0",
+    "sass-loader": "^7.3.1",
     "vue": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
   }
