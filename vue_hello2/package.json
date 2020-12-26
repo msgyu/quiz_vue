@@ -23,6 +23,7 @@
     "resolve-url-loader": "^3.1.0",
     "sass-loader": "^7.3.1",
     "vue": "^2.6.12",
+    "vue-social-sharing": "^3.0.4",
     "vue-template-compiler": "^2.6.12"
   }
 }
