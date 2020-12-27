@@ -2,6 +2,7 @@ require("./bootstrap");
 import Vue from "vue";
 import router from "./router.js";
 import SocialSharing from "vue-social-sharing";
+import axios from "axios";
 
 Vue.use(SocialSharing);
 
