@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -554,24 +554,678 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ "./node_modules/vue-social-sharing/dist/vue-social-sharing.js":
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Quiz.vue?vue&type=template&id=654966c0&":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Quiz.vue?vue&type=template&id=654966c0& ***!
+  \*******************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("main", [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("aside", { staticClass: "col-md-4 col-xs-12" }, [
+          _c("section", { staticClass: "sidebar-sns-section" }, [
+            _c("h3", { staticClass: "text-center sidebar-sns-h3" }, [
+              _vm._v("SNS共有")
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "sidebar-sns-links" },
+              [
+                _c("social-sharing", {
+                  attrs: { title: "shareボタン" },
+                  inlineTemplate: {
+                    render: function() {
+                      var _vm = this
+                      var _h = _vm.$createElement
+                      var _c = _vm._self._c || _h
+                      return _c(
+                        "div",
+                        { staticClass: "twitter__share" },
+                        [
+                          _c("network", { attrs: { network: "twitter" } }, [
+                            _c("i", { staticClass: "fab fa-twitter" }),
+                            _vm._v(" Twitter\n                ")
+                          ])
+                        ],
+                        1
+                      )
+                    },
+                    staticRenderFns: []
+                  }
+                }),
+                _vm._v(" "),
+                _c("social-sharing", {
+                  attrs: { title: "shareボタン" },
+                  inlineTemplate: {
+                    render: function() {
+                      var _vm = this
+                      var _h = _vm.$createElement
+                      var _c = _vm._self._c || _h
+                      return _c(
+                        "div",
+                        { staticClass: "facebook__share" },
+                        [
+                          _c("network", { attrs: { network: "facebook" } }, [
+                            _c("i", { staticClass: "fab fa-facebook" }),
+                            _vm._v(" Facebook\n                ")
+                          ])
+                        ],
+                        1
+                      )
+                    },
+                    staticRenderFns: []
+                  }
+                }),
+                _vm._v(" "),
+                _c("social-sharing", {
+                  attrs: { title: "shareボタン" },
+                  inlineTemplate: {
+                    render: function() {
+                      var _vm = this
+                      var _h = _vm.$createElement
+                      var _c = _vm._self._c || _h
+                      return _c(
+                        "div",
+                        { staticClass: "line__share" },
+                        [
+                          _c("network", { attrs: { network: "line" } }, [
+                            _c("i", { staticClass: "fab fa-line" }),
+                            _vm._v(" Line\n                ")
+                          ])
+                        ],
+                        1
+                      )
+                    },
+                    staticRenderFns: []
+                  }
+                }),
+                _vm._v(" "),
+                _c("social-sharing", {
+                  attrs: { title: "shareボタン" },
+                  inlineTemplate: {
+                    render: function() {
+                      var _vm = this
+                      var _h = _vm.$createElement
+                      var _c = _vm._self._c || _h
+                      return _c(
+                        "div",
+                        { staticClass: "google__share" },
+                        [
+                          _c("network", { attrs: { network: "googleplus" } }, [
+                            _c("i", { staticClass: "fab fa-google" }),
+                            _vm._v(" google\n                ")
+                          ])
+                        ],
+                        1
+                      )
+                    },
+                    staticRenderFns: []
+                  }
+                })
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(2)
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(3)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("header", [
+      _c("div", { staticClass: "container text-center" }, [
+        _c("h1", [_vm._v("4 Answers Quiz 4択クイズ&クイズ徹底解説")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "/" } }, [
+          _c("img", {
+            staticClass: "header-nav__logo",
+            attrs: { src: "/public/images/header-logo.png" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("nav", { staticClass: "navbar navbar-default navbar-static-top" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "navbar-header" }, [
+            _c(
+              "button",
+              {
+                staticClass: "navbar-toggle",
+                attrs: {
+                  type: "button",
+                  "data-toggle": "collapse",
+                  "data-target": "#navbar-ex-collapse"
+                }
+              },
+              [
+                _c("span", { staticClass: "sr-only" }, [
+                  _vm._v("Toggle navigation")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "icon-bar" }),
+                _vm._v(" "),
+                _c("span", { staticClass: "icon-bar" }),
+                _vm._v(" "),
+                _c("span", { staticClass: "icon-bar" })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "navbar-brand",
+                attrs: { id: "header-nav__home", href: "/" }
+              },
+              [_vm._v("ホーム")]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse navbar-collapse",
+              attrs: { id: "navbar-ex-collapse" }
+            },
+            [
+              _c("ul", { staticClass: "nav navbar-nav navbar-right" }, [
+                _c("li", [
+                  _c(
+                    "a",
+                    { attrs: { id: "header-nav__login", href: "/login" } },
+                    [_vm._v("ログイン")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    {
+                      attrs: { id: "header-nav__register", href: "/register" }
+                    },
+                    [_vm._v("ユーザー登録")]
+                  )
+                ])
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("article", { staticClass: "col-md-8 col-xs-12" }, [
+      _c("section", [
+        _c("h2", { staticClass: "quiz-question-h2" }, [
+          _c("img", {
+            staticClass: "quiz-question__logo",
+            attrs: { src: "public/images/what-is-mark.png" }
+          }),
+          _vm._v("\n            第1問\n          ")
+        ]),
+        _vm._v(" "),
+        _c("p", [_vm._v("正しい敬語を使った表現を１つ選んでください。")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "quiz-answer__list" }, [
+          _c("ul", [
+            _c("li", [
+              _c("a", [_c("button", [_vm._v("1")])]),
+              _vm._v(
+                "\n                受付でうかがってください。\n              "
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", [_c("button", [_vm._v("2")])]),
+              _vm._v(
+                "\n                課長がおっしゃったように、ファイルをご覧ください。\n              "
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", [_c("button", [_vm._v("3")])]),
+              _vm._v(
+                "\n                部長が申されたように進めていきます。\n              "
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", [_c("button", [_vm._v("4")])]),
+              _vm._v(
+                "\n                ○△商事の□□様がお越しになられました。\n              "
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", [
+        _c("h2", { staticClass: "quiz-correct-h2" }, [
+          _c("img", {
+            staticClass: "quiz-correct__logo",
+            attrs: { src: "public/images/correct-mark.png" }
+          }),
+          _vm._v("正解\n          ")
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _c("button", { staticClass: "quiz-correct-answer" }, [_vm._v("1")])
+        ]),
+        _vm._v(" "),
+        _c("button", [_vm._v("正解を表示する")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "alert alert-info" }, [
+          _c("strong", [_vm._v("正解!")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "alert alert-danger" }, [
+          _c("strong", [_vm._v("不正解!")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", [
+        _c("h2", { staticClass: "quiz-commentary-h2" }, [
+          _c("img", {
+            staticClass: "quiz-commentary__logo",
+            attrs: { src: "public/images/commentary-mark.png" }
+          }),
+          _vm._v("解説\n          ")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "quiz-commentary__text" }, [
+          _vm._v("\n            1）3）4）は、どこが間違っていたの？ "),
+          _c("br"),
+          _vm._v("\n            1）受付でうかがってください。"),
+          _c("br"),
+          _vm._v(
+            "\n            「うかがう」は謙譲語。謙譲語は自分または身内（自分の会社も含みます）の者に使う言葉で、相手に使うのは間違いです。"
+          ),
+          _c("br"),
+          _vm._v("\n            『受付でお尋ねください。』が正解です。"),
+          _c("br"),
+          _c("br"),
+          _vm._v("\n            3）部長が申されたように進めていきます。"),
+          _c("br"),
+          _vm._v(
+            "\n            「申す」も謙譲語です。謙譲語にれる・られるを付けても尊敬語にはなりません。"
+          ),
+          _c("br"),
+          _vm._v(
+            "\n            『社長がおっしゃったように進めていきます。』が正解です。"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("\n            4）○△商事の□□様がお越しになられました。"),
+          _c("br"),
+          _vm._v(
+            "\n            「なられました」は二重敬語の典型的な表現です。"
+          ),
+          _c("br"),
+          _vm._v(
+            "\n            『○△商事の□□様がお越しになりました。』が正解です。"
+          ),
+          _c("br")
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary center-block",
+            attrs: { type: "button" }
+          },
+          [_vm._v("\n            次の問題へ\n          ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          { staticClass: "center-block", attrs: { type: "button" } },
+          [_vm._v("結果を見る")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "sidebar-keywords" }, [
+      _c("h3", { staticClass: "text-center sidebar-keywords-h3" }, [
+        _vm._v("キーワード集")
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "sidebar-keywords__links" }, [
+        _c("li", [
+          _c("a", { attrs: { href: "/keyword?initial=A" } }, [_vm._v("Ａ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=B" } }, [_vm._v("Ｂ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=C" } }, [_vm._v("Ｃ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=D" } }, [_vm._v("Ｄ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=E" } }, [_vm._v("Ｅ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=F" } }, [_vm._v("Ｆ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=G" } }, [_vm._v("Ｇ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=H" } }, [_vm._v("Ｈ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=I" } }, [_vm._v("Ｉ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=J" } }, [_vm._v("Ｊ")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "/keyword?initial=K" } }, [_vm._v("Ｋ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=L" } }, [_vm._v("Ｌ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=M" } }, [_vm._v("Ｍ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=N" } }, [_vm._v("Ｎ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=O" } }, [_vm._v("Ｏ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=P" } }, [_vm._v("Ｐ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=Q" } }, [_vm._v("Ｑ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=R" } }, [_vm._v("Ｒ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=S" } }, [_vm._v("Ｓ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=T" } }, [_vm._v("Ｔ")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "/keyword?initial=U" } }, [_vm._v("Ｕ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=V" } }, [_vm._v("Ｖ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=W" } }, [_vm._v("Ｗ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=X" } }, [_vm._v("Ｘ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=Y" } }, [_vm._v("Ｙ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=Z" } }, [_vm._v("Ｚ")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "/keyword?initial=あ" } }, [_vm._v("あ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=い" } }, [_vm._v("い")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=う" } }, [_vm._v("う")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=え" } }, [_vm._v("え")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=お" } }, [_vm._v("お")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=か" } }, [_vm._v("か")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=き" } }, [_vm._v("き")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=く" } }, [_vm._v("く")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=け" } }, [_vm._v("け")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=こ" } }, [_vm._v("こ")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "/keyword?initial=さ" } }, [_vm._v("さ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=し" } }, [_vm._v("し")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=す" } }, [_vm._v("す")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=せ" } }, [_vm._v("せ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=そ" } }, [_vm._v("そ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=た" } }, [_vm._v("た")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=ち" } }, [_vm._v("ち")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=つ" } }, [_vm._v("つ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=て" } }, [_vm._v("て")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=と" } }, [_vm._v("と")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "/keyword?initial=な" } }, [_vm._v("な")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=に" } }, [_vm._v("に")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=ぬ" } }, [_vm._v("ぬ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=ね" } }, [_vm._v("ね")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=の" } }, [_vm._v("の")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=は" } }, [_vm._v("は")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=ひ" } }, [_vm._v("ひ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=ふ" } }, [_vm._v("ふ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=へ" } }, [_vm._v("へ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=ほ" } }, [_vm._v("ほ")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "/keyword?initial=ま" } }, [_vm._v("ま")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=み" } }, [_vm._v("み")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=む" } }, [_vm._v("む")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=め" } }, [_vm._v("め")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=も" } }, [_vm._v("も")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=ら" } }, [_vm._v("ら")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=り" } }, [_vm._v("り")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=る" } }, [_vm._v("る")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=れ" } }, [_vm._v("れ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=ろ" } }, [_vm._v("ろ")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "/keyword?initial=や" } }, [_vm._v("や")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=ゆ" } }, [_vm._v("ゆ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=よ" } }, [_vm._v("よ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=わ" } }, [_vm._v("わ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/keyword?initial=を" } }, [_vm._v("を")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", [
+      _c("div", { staticClass: "container text-center" }, [
+        _c("small", [_vm._v("© 2019 4Answers-quiz. All rights reserved.")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
-  !*** ./node_modules/vue-social-sharing/dist/vue-social-sharing.js ***!
+  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
   \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () {
+        injectStyles.call(
+          this,
+          (options.functional ? this.parent : this).$root.$options.shadowRoot
+        )
+      }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functional component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-social-sharing/dist/vue-social-sharing.common.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/vue-social-sharing/dist/vue-social-sharing.common.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
 /*!
  * vue-social-sharing v2.4.7 
  * (c) 2019 nicolasbeauvais
  * Released under the MIT License.
  */
-(function (global, factory) {
-	 true ? module.exports = factory(__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js")) :
-	undefined;
-}(this, (function (Vue) { 'use strict';
 
-Vue = 'default' in Vue ? Vue['default'] : Vue;
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var Vue = _interopDefault(__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"));
 
 var SocialSharingNetwork = {
   functional: true,
@@ -963,9 +1617,7 @@ if (typeof window !== 'undefined') {
   window.SocialSharing = SocialSharing;
 }
 
-return SocialSharing;
-
-})));
+module.exports = SocialSharing;
 
 /***/ }),
 
@@ -12986,20 +13638,62 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./resources/js/components/Home.vue":
+/***/ "./resources/js/components/Quiz.vue":
 /*!******************************************!*\
-  !*** ./resources/js/components/Home.vue ***!
+  !*** ./resources/js/components/Quiz.vue ***!
   \******************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Applications/MAMP/htdocs/vue/quiz_vue/vue_hello2/resources/js/components/Home.vue'");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Quiz_vue_vue_type_template_id_654966c0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Quiz.vue?vue&type=template&id=654966c0& */ "./resources/js/components/Quiz.vue?vue&type=template&id=654966c0&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _Quiz_vue_vue_type_template_id_654966c0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Quiz_vue_vue_type_template_id_654966c0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Quiz.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/home.js":
+/***/ "./resources/js/components/Quiz.vue?vue&type=template&id=654966c0&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/Quiz.vue?vue&type=template&id=654966c0& ***!
+  \*************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Quiz_vue_vue_type_template_id_654966c0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Quiz.vue?vue&type=template&id=654966c0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Quiz.vue?vue&type=template&id=654966c0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Quiz_vue_vue_type_template_id_654966c0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Quiz_vue_vue_type_template_id_654966c0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/quiz.js":
 /*!******************************!*\
-  !*** ./resources/js/home.js ***!
+  !*** ./resources/js/quiz.js ***!
   \******************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -13008,8 +13702,8 @@ throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.j
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Home */ "./resources/js/components/Home.vue");
-/* harmony import */ var vue_social_sharing__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-social-sharing */ "./node_modules/vue-social-sharing/dist/vue-social-sharing.js");
+/* harmony import */ var _components_Quiz__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Quiz */ "./resources/js/components/Quiz.vue");
+/* harmony import */ var vue_social_sharing__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-social-sharing */ "./node_modules/vue-social-sharing/dist/vue-social-sharing.common.js");
 /* harmony import */ var vue_social_sharing__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_social_sharing__WEBPACK_IMPORTED_MODULE_2__);
 
 
@@ -13018,32 +13712,20 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_social_sharing__WEBPACK_IMPOR
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: "app",
   components: {
-    app: _components_Home__WEBPACK_IMPORTED_MODULE_1__["default"]
+    app: _components_Quiz__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!**************************************************************!*\
-  !*** multi ./resources/js/home.js ./resources/sass/app.scss ***!
-  \**************************************************************/
+/***/ 1:
+/*!************************************!*\
+  !*** multi ./resources/js/quiz.js ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/MAMP/htdocs/vue/quiz_vue/vue_hello2/resources/js/home.js */"./resources/js/home.js");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/vue/quiz_vue/vue_hello2/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/vue/quiz_vue/vue_hello2/resources/js/quiz.js */"./resources/js/quiz.js");
 
 
 /***/ })
