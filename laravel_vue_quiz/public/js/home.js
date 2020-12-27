@@ -266,6 +266,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -39299,19 +39324,21 @@ var staticRenderFns = [
       _c("h2", { staticClass: "home-quiz__introduction-h2" }, [
         _c("img", {
           staticClass: "home-quiz__introduction-h2-logo",
-          attrs: { src: "/public/images/what-is-mark.png" }
+          attrs: { src: "/images/what-is-mark.png" }
         }),
-        _vm._v("4 Answers Quizとは?\n          ")
+        _vm._v("4 Answers Quizとは?\n                    ")
       ]),
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\n            4 Answers\n            Quizとはビジネスマナーから一般常識に至るまで様々なクイズを4択で出題するWEBアプリです。\n          "
+          "\n                        4 Answers\n                        Quizとはビジネスマナーから一般常識に至るまで様々なクイズを4択で出題するWEBアプリです。\n                    "
         )
       ]),
       _vm._v(" "),
       _c("p", [
-        _vm._v("何度もトライしてみて正解率100%を目指してみてください。")
+        _vm._v(
+          "\n                        何度もトライしてみて正解率100%を目指してみてください。\n                    "
+        )
       ])
     ])
   },
@@ -39323,9 +39350,9 @@ var staticRenderFns = [
       _c("h2", { staticClass: "home-quiz__setting-h2" }, [
         _c("img", {
           staticClass: "home-quiz__setting-h2-logo",
-          attrs: { src: "/public/images/directory-icon.png" }
+          attrs: { src: "/images/directory-icon.png" }
         }),
-        _vm._v("出題設定\n          ")
+        _vm._v("出題設定\n                    ")
       ]),
       _vm._v(" "),
       _c("form", { attrs: { action: "/quiz", method: "post" } }, [
@@ -39338,46 +39365,48 @@ var staticRenderFns = [
               checked: ""
             }
           }),
-          _vm._v("ビジネスマナー\n            ")
+          _vm._v("ビジネスマナー\n                        ")
         ]),
         _vm._v(" "),
         _c("label", [
           _c("input", {
             attrs: { type: "checkbox", name: "categories[]", value: "2" }
           }),
-          _vm._v("一般常識\n            ")
+          _vm._v("一般常識\n                        ")
         ]),
         _vm._v(" "),
         _c("label", [
           _c("input", {
             attrs: { type: "checkbox", name: "categories[]", value: "3" }
           }),
-          _vm._v("就職・転職\n            ")
+          _vm._v("就職・転職\n                        ")
         ]),
         _vm._v(" "),
         _c("label", [
           _c("input", {
             attrs: { type: "checkbox", name: "categories[]", value: "4" }
           }),
-          _vm._v("法律\n            ")
+          _vm._v("法律\n                        ")
         ]),
         _vm._v(" "),
         _c("label", [
           _c("input", {
             attrs: { type: "checkbox", name: "categories[]", value: "5" }
           }),
-          _vm._v("IT\n            ")
+          _vm._v("IT\n                        ")
         ]),
         _vm._v(" "),
         _c("label", [
           _c("input", {
             attrs: { type: "checkbox", name: "categories[]", value: "6" }
           }),
-          _vm._v("雑学\n            ")
+          _vm._v("雑学\n                        ")
         ]),
         _vm._v(" "),
         _c("div", {}, [
-          _vm._v("\n              全項目チェック\n              "),
+          _vm._v(
+            "\n                            全項目チェック\n                            "
+          ),
           _c(
             "button",
             {
@@ -39388,7 +39417,11 @@ var staticRenderFns = [
                 value: "1"
               }
             },
-            [_vm._v("\n                ON\n              ")]
+            [
+              _vm._v(
+                "\n                                ON\n                            "
+              )
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -39401,14 +39434,22 @@ var staticRenderFns = [
                 value: "1"
               }
             },
-            [_vm._v("\n                OFF\n              ")]
+            [
+              _vm._v(
+                "\n                                OFF\n                            "
+              )
+            ]
           )
         ]),
         _vm._v(" "),
         _c(
           "button",
           { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-          [_vm._v("出題開始")]
+          [
+            _vm._v(
+              "\n                            出題開始\n                        "
+            )
+          ]
         ),
         _vm._v(" "),
         _c("input", { attrs: { type: "hidden", name: "_token", value: "" } })
@@ -39422,9 +39463,9 @@ var staticRenderFns = [
     return _c("h2", { staticClass: "home-quiz__ranking-h2" }, [
       _c("img", {
         staticClass: "home-quiz__ranking-h2-logo",
-        attrs: { src: "/public/images/graph-icon.png" }
+        attrs: { src: "/images/graph-icon.png" }
       }),
-      _vm._v("ランキング\n          ")
+      _vm._v("ランキング\n                    ")
     ])
   },
   function() {
@@ -39442,7 +39483,7 @@ var staticRenderFns = [
             checked: ""
           }
         }),
-        _vm._v("総合\n            ")
+        _vm._v("総合\n                        ")
       ]),
       _vm._v(" "),
       _c("label", [
@@ -39450,7 +39491,7 @@ var staticRenderFns = [
           staticClass: "ranking-radio",
           attrs: { type: "radio", name: "ranking-radio", value: "2" }
         }),
-        _vm._v("今月\n            ")
+        _vm._v("今月\n                        ")
       ]),
       _vm._v(" "),
       _c("label", [
@@ -39458,7 +39499,7 @@ var staticRenderFns = [
           staticClass: "ranking-radio",
           attrs: { type: "radio", name: "ranking-radio", value: "3" }
         }),
-        _vm._v("今週\n            ")
+        _vm._v("今週\n                        ")
       ])
     ])
   },
@@ -39470,9 +39511,9 @@ var staticRenderFns = [
       _c("h2", { staticClass: "home__notice-h2" }, [
         _c("img", {
           staticClass: "home__notice-h2-logo",
-          attrs: { src: "/public/images/news-icon.png" }
+          attrs: { src: "/images/news-icon.png" }
         }),
-        _vm._v("お知らせ情報\n          ")
+        _vm._v("お知らせ情報\n                    ")
       ]),
       _vm._v(" "),
       _c("dl", [
