@@ -257,3 +257,15 @@
     </footer>
   </div>
 </template>
+
+<script>
+import TheHeader from "../layout/TheHeader";
+import TheFooter from "../layout/TheFooter";
+
+export default {
+  components: {
+    TheHeader,
+    TheFooter,
+  },
+};
+</script>
