@@ -2168,8 +2168,16 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      categories: [1]
+      categories: [1],
+      information: []
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$http.get("/api/information").then(function (response) {
+      _this.information = response.data;
+    });
   },
   methods: {
     goQuiz: function goQuiz() {

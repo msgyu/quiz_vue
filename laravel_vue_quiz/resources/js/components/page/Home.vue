@@ -172,9 +172,15 @@ export default {
     },
     data() {
         return {
-            categories: [1]
+            categories: [1],
+            information: []
         };
     },
+    mounted() {
+    this.$http.get("/api/information").then(response => {
+      this.information = response.data;
+    });
+  },
     methods: {
         goQuiz() {
             this.$router.push("/quiz?categories=" + this.categories);
