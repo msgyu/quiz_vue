@@ -11,6 +11,12 @@ class InformationSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('informations')->truncate();
+
+        DB::table('informations')->insert([
+            'information' => '最初のお知らせです',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }
