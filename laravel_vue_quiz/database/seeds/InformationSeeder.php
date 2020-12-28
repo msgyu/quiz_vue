@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class InformationSeeder extends Seeder
 {
@@ -11,9 +12,9 @@ class InformationSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('informations')->truncate();
+        DB::table('information')->truncate();
 
-        DB::table('informations')->insert([
+        DB::table('information')->insert([
             'information' => '最初のお知らせです',
             'created_at' => now(),
             'updated_at' => now(),
