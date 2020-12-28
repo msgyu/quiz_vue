@@ -14,7 +14,8 @@ class InformationController extends Controller
      */
     public function index()
     {
-        //
+        $information = Information::orderby('id', 'desc')->get();
+        return $information;
     }
 
     /**
