@@ -17,8 +17,10 @@ class CreateQuizzesTable extends Migration
             $table->bigIncrements('id');
             $table->text('title');
             $table->string('image_src')->nullable();
-            $table->integer('answers_id');
-            $table->integer('categories_id');
+            $table->unsignedBigInteger('answers_id');
+            $table->foreign('answers_id')->references('id')->on('answers');
+            $table->unsignedBigInteger('answers_id');
+            $table->foreign('categories_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
@@ -31,5 +33,6 @@ class CreateQuizzesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('quizzes');
+        Schema::dropIfExists('answers');
     }
 }
