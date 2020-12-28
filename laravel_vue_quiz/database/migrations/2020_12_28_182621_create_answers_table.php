@@ -15,6 +15,12 @@ class CreateAnswersTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('answer_1');
+            $table->string('answer_2');
+            $table->string('answer_3');
+            $table->string('answer_4');
+            $table->integer('correct_answer_no');
+            $table->text('commentary');
             $table->timestamps();
         });
     }
@@ -26,6 +32,7 @@ class CreateAnswersTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('quizzes');
         Schema::dropIfExists('answers');
     }
 }
