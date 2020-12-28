@@ -74912,6 +74912,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$http = axios__WEBPACK_IMPORTED_MODULE_3___default.a;
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_social_sharing__WEBPACK_IMPORTED_MODULE_2___default.a);
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   router: _router_js__WEBPACK_IMPORTED_MODULE_1__["default"]
