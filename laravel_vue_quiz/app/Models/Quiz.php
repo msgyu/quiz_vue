@@ -12,7 +12,7 @@ class Quiz extends Model
 
     public function answer()
     {
-        return $this->hasOne('App\Models\Answer');
+        return $this->belongsTo('App\Models\Answer');
     }
 
     public function category()

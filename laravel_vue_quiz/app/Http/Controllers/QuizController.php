@@ -21,7 +21,7 @@ class QuizController extends Controller
             return [];
         }
 
-        $quiz = Quiz::with(['answer', 'category'])
+        $quiz = Quiz::with(['category', 'answer'])
             ->wherein('quizzes.categories_id', $category)
             ->inRandomOrder()
             ->limit(10)

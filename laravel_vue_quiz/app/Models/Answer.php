@@ -12,6 +12,6 @@ class Answer extends Model
 
     public function quiz()
     {
-        return $this->belongsTo('App\Models\Quiz');
+        return $this->hasOne('App\Models\Quiz');
     }
 }
