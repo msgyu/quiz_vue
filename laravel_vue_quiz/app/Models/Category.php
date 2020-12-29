@@ -9,4 +9,9 @@ class Category extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function category()
+    {
+        return $this->hasMany('App\Models\Quiz');
+    }
 }
