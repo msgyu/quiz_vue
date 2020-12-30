@@ -255,16 +255,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -1245,46 +1235,99 @@ var render = function() {
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.title))]),
               _vm._v(" "),
+              _vm.imageSrc
+                ? _c("div", [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: {
+                        id: "quiz-image",
+                        src: "/images/quiz/" + _vm.imageSrc
+                      }
+                    })
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
               _c("div", { staticClass: "quiz-answer__list" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", [
-                      _c(
-                        "button",
-                        {
-                          attrs: { disabled: _vm.isAlreadyAnswered },
-                          on: {
-                            click: function($event) {
-                              return _vm.goAnswer(_vm.index + 1)
+                _c(
+                  "ul",
+                  _vm._l(_vm.answers, function(answer, index) {
+                    return _c("li", { key: index }, [
+                      _c("a", [
+                        _c(
+                          "button",
+                          {
+                            attrs: { disabled: _vm.isAlreadyAnswered },
+                            on: {
+                              click: function($event) {
+                                return _vm.goAnswer(index + 1)
+                              }
                             }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                                        " +
-                              _vm._s(_vm.index + 1) +
-                              "\n                                    "
-                          )
-                        ]
+                          },
+                          [
+                            _vm._v(
+                              "\n                                        " +
+                                _vm._s(index + 1) +
+                                "\n                                    "
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(answer) +
+                          "\n                            "
                       )
-                    ]),
-                    _vm._v(
-                      "\n                                受付でうかがってください。\n                            "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _vm._m(2),
-                  _vm._v(" "),
-                  _vm._m(3)
-                ])
+                    ])
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "text-right" }, [
+                _vm._v(
+                  "\n                        カテゴリー: " +
+                    _vm._s(_vm.categoryName) +
+                    "\n                    "
+                )
               ])
             ]),
             _vm._v(" "),
-            _vm._m(4),
+            _c("section", [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("p", [
+                _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isAlreadyAnswered,
+                        expression: "isAlreadyAnswered"
+                      }
+                    ],
+                    staticClass: "quiz-correct-answer",
+                    attrs: { disabled: "" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(_vm.correctAnswerNo) +
+                        "\n                        "
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("button", [_vm._v("正解を表示する")]),
+              _vm._v(" "),
+              _vm._m(2),
+              _vm._v(" "),
+              _vm._m(3)
+            ]),
             _vm._v(" "),
-            _vm._m(5)
+            _vm._m(4)
           ]),
           _vm._v(" "),
           _c("the-sidebar")
@@ -1293,7 +1336,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _vm._m(6)
+    _vm._m(5)
   ])
 }
 var staticRenderFns = [
@@ -1385,61 +1428,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", [_c("button", [_vm._v("2")])]),
-      _vm._v(
-        "\n                                課長がおっしゃったように、ファイルをご覧ください。\n                            "
-      )
+    return _c("h2", { staticClass: "quiz-correct-h2" }, [
+      _c("img", {
+        staticClass: "quiz-correct__logo",
+        attrs: { src: "/images/correct-mark.png" }
+      }),
+      _vm._v("正解\n                    ")
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", [_c("button", [_vm._v("3")])]),
-      _vm._v(
-        "\n                                部長が申されたように進めていきます。\n                            "
-      )
+    return _c("div", { staticClass: "alert alert-info" }, [
+      _c("strong", [_vm._v("正解!")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", [_c("button", [_vm._v("4")])]),
-      _vm._v(
-        "\n                                ○△商事の□□様がお越しになられました。\n                            "
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", [
-      _c("h2", { staticClass: "quiz-correct-h2" }, [
-        _c("img", {
-          staticClass: "quiz-correct__logo",
-          attrs: { src: "/images/correct-mark.png" }
-        }),
-        _vm._v("正解\n                    ")
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _c("button", { staticClass: "quiz-correct-answer" }, [_vm._v("1")])
-      ]),
-      _vm._v(" "),
-      _c("button", [_vm._v("正解を表示する")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "alert alert-info" }, [
-        _c("strong", [_vm._v("正解!")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "alert alert-danger" }, [
-        _c("strong", [_vm._v("不正解!")])
-      ])
+    return _c("div", { staticClass: "alert alert-danger" }, [
+      _c("strong", [_vm._v("不正解!")])
     ])
   },
   function() {

@@ -60,9 +60,19 @@
                             第{{ quizNumber }}問
                         </h2>
                         <p>{{ title }}</p>
+                        <div v-if="imageSrc">
+                            <img
+                                class="img-responsive"
+                                id="quiz-image"
+                                :src="'/images/quiz/' + imageSrc"
+                            />
+                        </div>
                         <div class="quiz-answer__list">
                             <ul>
-                                <li>
+                                <li
+                                    v-for="(answer, index) in answers"
+                                    :key="index"
+                                >
                                     <a>
                                         <button
                                             @click="goAnswer(index + 1)"
@@ -71,38 +81,12 @@
                                             {{ index + 1 }}
                                         </button>
                                     </a>
-                                    受付でうかがってください。
+                                    {{ answer }}
                                 </li>
-                                <li>
-                                    <a>
-                                        <button>2</button>
-                                    </a>
-                                    課長がおっしゃったように、ファイルをご覧ください。
-                                </li>
-                                <li>
-                                    <a>
-                                        <button>3</button>
-                                    </a>
-                                    部長が申されたように進めていきます。
-                                </li>
-                                <li>
-                                    <a>
-                                        <button>4</button>
-                                    </a>
-                                    ○△商事の□□様がお越しになられました。
-                                </li>
-                                <!-- <li v-for="(answer, index) in answers">
-                                    <a>
-                                        <button
-                                            @click="goAnswer(index + 1)"
-                                            :disabled="isAnswerNotAlready"
-                                        >
-                                            @{{ index + 1 }}
-                                        </button>
-                                    </a>
-                                    @{{ answer }}
-                                </li> -->
                             </ul>
+                        </div>
+                        <div class="text-right">
+                            カテゴリー: {{ categoryName }}
                         </div>
                     </section>
                     <section>
@@ -113,7 +97,13 @@
                             />正解
                         </h2>
                         <p>
-                            <button class="quiz-correct-answer">1</button>
+                            <button
+                                class="quiz-correct-answer"
+                                v-show="isAlreadyAnswered"
+                                disabled
+                            >
+                                {{ correctAnswerNo }}
+                            </button>
                         </p>
                         <button>正解を表示する</button>
                         <div class="alert alert-info">
