@@ -57,14 +57,19 @@
                                 class="quiz-question__logo"
                                 src="/images/what-is-mark.png"
                             />
-                            第1問
+                            第{{ quizNumber }}問
                         </h2>
-                        <p>正しい敬語を使った表現を１つ選んでください。</p>
+                        <p>{{ title }}</p>
                         <div class="quiz-answer__list">
                             <ul>
                                 <li>
                                     <a>
-                                        <button>1</button>
+                                        <button
+                                            @click="goAnswer(index + 1)"
+                                            :disabled="isAlreadyAnswered"
+                                        >
+                                            {{ index + 1 }}
+                                        </button>
                                     </a>
                                     受付でうかがってください。
                                 </li>
