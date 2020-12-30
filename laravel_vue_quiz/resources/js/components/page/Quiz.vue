@@ -114,7 +114,7 @@
                         <div class="alert alert-info" v-show="isCorrect">
                             <strong>正解!</strong>
                         </div>
-                        <div class="alert alert-danger">
+                        <div class="alert alert-danger" v-show="isMistake">
                             <strong>不正解!</strong>
                         </div>
                     </section>

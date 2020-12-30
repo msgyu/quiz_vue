@@ -1365,10 +1365,24 @@ var render = function() {
                 [_c("strong", [_vm._v("正解!")])]
               ),
               _vm._v(" "),
-              _vm._m(2)
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isMistake,
+                      expression: "isMistake"
+                    }
+                  ],
+                  staticClass: "alert alert-danger"
+                },
+                [_c("strong", [_vm._v("不正解!")])]
+              )
             ]),
             _vm._v(" "),
-            _vm._m(3)
+            _vm._m(2)
           ]),
           _vm._v(" "),
           _c("the-sidebar")
@@ -1377,7 +1391,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _vm._m(4)
+    _vm._m(3)
   ])
 }
 var staticRenderFns = [
@@ -1475,14 +1489,6 @@ var staticRenderFns = [
         attrs: { src: "/images/correct-mark.png" }
       }),
       _vm._v("正解\n                    ")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "alert alert-danger" }, [
-      _c("strong", [_vm._v("不正解!")])
     ])
   },
   function() {
