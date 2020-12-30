@@ -198,6 +198,22 @@ export default {
             this.quizData = response.data;
             console.log(this.quizData);
         });
+    },
+    methods: {
+        findNextQuiz(quizNumber) {
+            this.title = this.quizData[quizNumber].title;
+            this.answers = [
+                this.quizData[quizNumber].answer.answer_1,
+                this.quizData[quizNumber].answer.answer_2,
+                this.quizData[quizNumber].answer.answer_3,
+                this.quizData[quizNumber].answer.answer_4
+            ];
+            this.commentary = this.quizData[quizNumber].answer.commentary;
+            this.correctAnswerNo = this.quizData[
+                quizNumber
+            ].answer.correct_answer_no;
+            this.categoryName = this.quizData[quizNumber].category.name;
+        }
     }
 };
 </script>
