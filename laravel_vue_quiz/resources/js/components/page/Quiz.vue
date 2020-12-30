@@ -135,10 +135,19 @@
                         <button
                             type="button"
                             class="btn btn-primary center-block"
+                            @click="goNextQuiz"
+                            v-if="!isQuizFinish"
                         >
                             次の問題へ
                         </button>
-                        <button type="button" class="center-block">
+                        <button
+                            type="button"
+                            data-toggle="modal"
+                            data-target="#modal-result"
+                            class="center-block"
+                            v-if="isQuizFinish"
+                            @click="showResult"
+                        >
                             結果を見る
                         </button>
                     </section>
@@ -168,7 +177,19 @@ export default {
     },
     data() {
         return {
-            quizData: []
+            quizData: [],
+            title: "",
+            imageSrc: "",
+            answers: [],
+            commentary: "",
+            correctAnswerNo: 0,
+            isCorrect: false,
+            isMistake: false,
+            isAlreadyAnswered: false,
+            isQuizFinish: false,
+            score: 0,
+            quizNumber: 1,
+            categoryName: ""
         };
     },
     mounted() {

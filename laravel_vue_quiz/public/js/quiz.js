@@ -255,6 +255,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -266,7 +275,19 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      quizData: []
+      quizData: [],
+      title: "",
+      imageSrc: "",
+      answers: [],
+      commentary: "",
+      correctAnswerNo: 0,
+      isCorrect: false,
+      isMistake: false,
+      isAlreadyAnswered: false,
+      isQuizFinish: false,
+      score: 0,
+      quizNumber: 1,
+      categoryName: ""
     };
   },
   mounted: function mounted() {
@@ -1406,28 +1427,41 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary center-block",
-                  attrs: { type: "button" }
-                },
-                [
-                  _vm._v(
-                    "\n                        次の問題へ\n                    "
+              !_vm.isQuizFinish
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary center-block",
+                      attrs: { type: "button" },
+                      on: { click: _vm.goNextQuiz }
+                    },
+                    [
+                      _vm._v(
+                        "\n                        次の問題へ\n                    "
+                      )
+                    ]
                   )
-                ]
-              ),
+                : _vm._e(),
               _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "center-block", attrs: { type: "button" } },
-                [
-                  _vm._v(
-                    "\n                        結果を見る\n                    "
+              _vm.isQuizFinish
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "center-block",
+                      attrs: {
+                        type: "button",
+                        "data-toggle": "modal",
+                        "data-target": "#modal-result"
+                      },
+                      on: { click: _vm.showResult }
+                    },
+                    [
+                      _vm._v(
+                        "\n                        結果を見る\n                    "
+                      )
+                    ]
                   )
-                ]
-              )
+                : _vm._e()
             ])
           ]),
           _vm._v(" "),
