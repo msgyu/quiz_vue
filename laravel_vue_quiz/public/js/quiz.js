@@ -255,6 +255,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -1320,14 +1325,50 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("button", [_vm._v("正解を表示する")]),
+              _c(
+                "button",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: !_vm.isAlreadyAnswered,
+                      expression: "!isAlreadyAnswered"
+                    }
+                  ],
+                  on: {
+                    click: function($event) {
+                      return _vm.goAnswer(0)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                        正解を表示する\n                    "
+                  )
+                ]
+              ),
               _vm._v(" "),
-              _vm._m(2),
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isCorrect,
+                      expression: "isCorrect"
+                    }
+                  ],
+                  staticClass: "alert alert-info"
+                },
+                [_c("strong", [_vm._v("正解!")])]
+              ),
               _vm._v(" "),
-              _vm._m(3)
+              _vm._m(2)
             ]),
             _vm._v(" "),
-            _vm._m(4)
+            _vm._m(3)
           ]),
           _vm._v(" "),
           _c("the-sidebar")
@@ -1336,7 +1377,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _vm._m(5)
+    _vm._m(4)
   ])
 }
 var staticRenderFns = [
@@ -1434,14 +1475,6 @@ var staticRenderFns = [
         attrs: { src: "/images/correct-mark.png" }
       }),
       _vm._v("正解\n                    ")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "alert alert-info" }, [
-      _c("strong", [_vm._v("正解!")])
     ])
   },
   function() {

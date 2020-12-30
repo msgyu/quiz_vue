@@ -105,8 +105,13 @@
                                 {{ correctAnswerNo }}
                             </button>
                         </p>
-                        <button>正解を表示する</button>
-                        <div class="alert alert-info">
+                        <button
+                            @click="goAnswer(0)"
+                            v-show="!isAlreadyAnswered"
+                        >
+                            正解を表示する
+                        </button>
+                        <div class="alert alert-info" v-show="isCorrect">
                             <strong>正解!</strong>
                         </div>
                         <div class="alert alert-danger">
