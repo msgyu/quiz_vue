@@ -125,17 +125,12 @@
                                 src="/images/commentary-mark.png"
                             />解説
                         </h2>
-                        <div class="quiz-commentary__text">
-                            1）3）4）は、どこが間違っていたの？ <br />
-                            1）受付でうかがってください。<br />
-                            「うかがう」は謙譲語。謙譲語は自分または身内（自分の会社も含みます）の者に使う言葉で、相手に使うのは間違いです。<br />
-                            『受付でお尋ねください。』が正解です。<br /><br />
-                            3）部長が申されたように進めていきます。<br />
-                            「申す」も謙譲語です。謙譲語にれる・られるを付けても尊敬語にはなりません。<br />
-                            『社長がおっしゃったように進めていきます。』が正解です。<br /><br />
-                            4）○△商事の□□様がお越しになられました。<br />
-                            「なられました」は二重敬語の典型的な表現です。<br />
-                            『○△商事の□□様がお越しになりました。』が正解です。<br />
+                        <div
+                            class="quiz-commentary__text"
+                            v-show="isAlreadyAnswered"
+                            style="white-space:pre-wrap; word-wrap:break-word;"
+                        >
+                            {{ commentary }}
                         </div>
                         <button
                             type="button"
