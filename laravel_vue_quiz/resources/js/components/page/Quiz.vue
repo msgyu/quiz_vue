@@ -86,6 +86,17 @@
                                     </a>
                                     ○△商事の□□様がお越しになられました。
                                 </li>
+                                <!-- <li v-for="(answer, index) in answers">
+                                    <a>
+                                        <button
+                                            @click="goAnswer(index + 1)"
+                                            :disabled="isAnswerNotAlready"
+                                        >
+                                            @{{ index + 1 }}
+                                        </button>
+                                    </a>
+                                    @{{ answer }}
+                                </li> -->
                             </ul>
                         </div>
                     </section>
@@ -159,6 +170,18 @@ export default {
         TheHeader,
         TheFooter,
         TheSidebar
+    },
+    data() {
+        return {
+            quizData: []
+        };
+    },
+    mounted() {
+        const categories = this.$route.query.categories;
+        this.$http.get(`/api/quiz?categories=${categories}`).then(response => {
+            this.quizData = response.data;
+            console.log(this.quizData);
+        });
     }
 };
 </script>
