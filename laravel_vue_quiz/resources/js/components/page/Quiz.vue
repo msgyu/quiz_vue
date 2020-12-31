@@ -200,6 +200,15 @@ export default {
         });
     },
     methods: {
+        goAnswer() {
+            console.log("ok");
+        },
+        goNextQuiz() {
+            console.log("ok");
+        },
+        showResult() {
+            console.log("ok");
+        },
         findNextQuiz(quizNumber) {
             this.title = this.quizData[quizNumber].title;
             this.answers = [

@@ -300,6 +300,15 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    goAnswer: function goAnswer() {
+      console.log("ok");
+    },
+    goNextQuiz: function goNextQuiz() {
+      console.log("ok");
+    },
+    showResult: function showResult() {
+      console.log("ok");
+    },
     findNextQuiz: function findNextQuiz(quizNumber) {
       this.title = this.quizData[quizNumber].title;
       this.answers = [this.quizData[quizNumber].answer.answer_1, this.quizData[quizNumber].answer.answer_2, this.quizData[quizNumber].answer.answer_3, this.quizData[quizNumber].answer.answer_4];
