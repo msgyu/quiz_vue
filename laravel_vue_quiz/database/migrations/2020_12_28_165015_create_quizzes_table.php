@@ -17,10 +17,10 @@ class CreateQuizzesTable extends Migration
             $table->bigIncrements('id');
             $table->text('title');
             $table->string('image_src')->nullable();
-            $table->unsignedBigInteger('answers_id');
-            $table->foreign('answers_id')->references('id')->on('answers');
-            $table->unsignedBigInteger('categories_id');
-            $table->foreign('categories_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('answer_id');
+            $table->foreign('answer_id')->references('id')->on('answers');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

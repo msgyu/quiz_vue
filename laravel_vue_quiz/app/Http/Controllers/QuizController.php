@@ -12,9 +12,22 @@ class QuizController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $category = $request->input('categories');
+        if ($category) {
+            $category = explode(',', $category);
+        } else {
+            return [];
+        }
+
+        $quiz = Quiz::with(['category', 'answer'])
+            ->wherein('quizzes.category_id', $category)
+            ->inRandomOrder()
+            ->limit(10)
+            ->get();
+
+        return $quiz;
     }
 
     /**
