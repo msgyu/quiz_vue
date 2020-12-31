@@ -1,53 +1,6 @@
 <template>
     <div>
-        <header>
-            <div class="container text-center">
-                <h1>4 Answers Quiz 4択クイズ&クイズ徹底解説</h1>
-                <a href="/">
-                    <img
-                        class="header-nav__logo"
-                        src="/images/header-logo.png"
-                    />
-                </a>
-            </div>
-            <nav class="navbar navbar-default navbar-static-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button
-                            type="button"
-                            class="navbar-toggle"
-                            data-toggle="collapse"
-                            data-target="#navbar-ex-collapse"
-                        >
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" id="header-nav__home" href="/"
-                            >ホーム</a
-                        >
-                    </div>
-                    <div
-                        class="collapse navbar-collapse"
-                        id="navbar-ex-collapse"
-                    >
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a id="header-nav__login" href="/login"
-                                    >ログイン</a
-                                >
-                            </li>
-                            <li>
-                                <a id="header-nav__register" href="/register"
-                                    >ユーザー登録</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <the-header></the-header>
         <main>
             <div class="container">
                 <article class="col-md-8 col-xs-12">
@@ -155,12 +108,7 @@
                 <the-sidebar></the-sidebar>
             </div>
         </main>
-
-        <footer>
-            <div class="container text-center">
-                <small>© 2019 4Answers-quiz. All rights reserved.</small>
-            </div>
-        </footer>
+        <the-footer></the-footer>
     </div>
 </template>
 
@@ -196,7 +144,9 @@ export default {
         const categories = this.$route.query.categories;
         this.$http.get(`/api/quiz?categories=${categories}`).then(response => {
             this.quizData = response.data;
+            this.findNextQuiz(0);
             console.log(this.quizData);
+            console.log("ok");
         });
     },
     methods: {
@@ -217,6 +167,7 @@ export default {
                 this.quizData[quizNumber].answer.answer_3,
                 this.quizData[quizNumber].answer.answer_4
             ];
+            console.log("ok");
             this.commentary = this.quizData[quizNumber].answer.commentary;
             this.correctAnswerNo = this.quizData[
                 quizNumber
