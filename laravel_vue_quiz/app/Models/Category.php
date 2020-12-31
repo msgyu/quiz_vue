@@ -10,7 +10,7 @@ class Category extends Model
         'name'
     ];
 
-    public function category()
+    public function quiz()
     {
         return $this->hasMany('App\Models\Quiz');
     }
