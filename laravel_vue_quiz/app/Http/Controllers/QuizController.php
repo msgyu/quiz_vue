@@ -22,7 +22,7 @@ class QuizController extends Controller
         }
 
         $quiz = Quiz::with(['category', 'answer'])
-            ->wherein('quizzes.categories_id', $category)
+            ->wherein('quizzes.category_id', $category)
             ->inRandomOrder()
             ->limit(10)
             ->get();
