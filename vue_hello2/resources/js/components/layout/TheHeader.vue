@@ -58,7 +58,12 @@
                     to="/mypage"
                     >マイページ</router-link
                   >
-                  <a class="navbar-brand" id="header-nav__logout">ログアウト</a>
+                  <a
+                    class="navbar-brand"
+                    id="header-nav__logout"
+                    @click="logout"
+                    >ログアウト</a
+                  >
                   <form
                     id="logout-form"
                     action="/logout"
@@ -89,6 +94,11 @@ export default {
   props: {
     auth: {
       type: Object | Array,
+    },
+  },
+  methods: {
+    logout() {
+      document.querySelector("#logout-form").submit();
     },
   },
 };
