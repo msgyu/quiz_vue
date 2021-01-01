@@ -196,7 +196,10 @@ export default {
             name: "",
             email: "",
             password: "",
-            password_confirmation: ""
+            password_confirmation: "",
+            csrf: document
+                .querySelector('meta[name="csrf-token"]')
+                .getAttribute("content")
         };
     }
 };
