@@ -2491,6 +2491,9 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     errors: {
       type: Object | Array
+    },
+    auth: {
+      type: Object | Array
     }
   }
 });

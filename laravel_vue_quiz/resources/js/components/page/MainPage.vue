@@ -19,6 +19,9 @@ export default {
     props: {
         errors: {
             type: Object | Array
+        },
+        auth: {
+            type: Object | Array
         }
     }
 };
