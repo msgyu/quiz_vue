@@ -8,6 +8,7 @@
                             <div class="panel-heading text-center">
                                 ユーザー登録
                             </div>
+
                             <div
                                 class="form-group has-error"
                                 v-if="errors.length !== 0"
@@ -31,6 +32,7 @@
                                     id="register"
                                     method="post"
                                     tag="form"
+                                    @submit.prevent="register()"
                                     v-slot="{ invalid }"
                                 >
                                     <input
