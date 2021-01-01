@@ -2489,10 +2489,10 @@ __webpack_require__.r(__webpack_exports__);
     TheFooter: _layout_TheFooter__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: {
-    errors: {
+    auth: {
       type: Object | Array
     },
-    auth: {
+    errors: {
       type: Object | Array
     }
   }

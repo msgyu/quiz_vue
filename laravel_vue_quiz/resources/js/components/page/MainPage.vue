@@ -17,10 +17,10 @@ export default {
         TheFooter
     },
     props: {
-        errors: {
+        auth: {
             type: Object | Array
         },
-        auth: {
+        errors: {
             type: Object | Array
         }
     }
