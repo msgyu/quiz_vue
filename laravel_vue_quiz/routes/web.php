@@ -21,3 +21,6 @@ Route::get('/register', function () {
     return view('auth.register.index');
 });
 Route::post('/register', 'Auth\RegisterController@register');
+Route::get('/login', function () {
+    return view('auth.login.index');
+});
