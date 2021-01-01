@@ -39,6 +39,19 @@ header {
             &__register {
                 color: $white;
             }
+            &__name {
+                color: $white;
+            }
+
+            &__mypage {
+                color: $white;
+                margin: auto;
+            }
+
+            &__logout {
+                color: $white;
+                margin: auto;
+            }
         }
     }
 }

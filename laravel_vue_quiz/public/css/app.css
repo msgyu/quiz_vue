@@ -4650,6 +4650,20 @@ header #header-nav__register {
   color: #fff;
 }
 
+header #header-nav__name {
+  color: #fff;
+}
+
+header #header-nav__mypage {
+  color: #fff;
+  margin: auto;
+}
+
+header #header-nav__logout {
+  color: #fff;
+  margin: auto;
+}
+
 footer {
   background: #6f7882;
   padding: 30px 0;
