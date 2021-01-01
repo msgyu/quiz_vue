@@ -20,10 +20,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <router-link class="navbar-brand" id="header-nav__home" to="/">ホーム</router-link>
+          <router-link class="navbar-brand" id="header-nav__home" to="/"
+            >ホーム</router-link
+          >
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right" v-if="auth.length === 0">
             <li>
               <a id="header-nav__login" href="/login">ログイン</a>
             </li>
