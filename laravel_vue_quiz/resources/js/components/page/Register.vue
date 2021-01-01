@@ -19,7 +19,7 @@
                                         v-for="(error, key, index) in errors"
                                         :key="index"
                                     >
-                                        {{ key }}:{{ error }}
+                                        {{ error }}
                                     </div>
                                 </div>
                             </div>
