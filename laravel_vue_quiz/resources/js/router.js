@@ -18,6 +18,11 @@ export default new Router({
             path: "/quiz",
             name: "quiz",
             component: Quiz
+        },
+        {
+            path: "/register",
+            name: "register",
+            component: Register
         }
     ]
 });
