@@ -109,6 +109,10 @@
             </div>
         </main>
         <the-footer></the-footer>
+        <the-modal
+            :correctPercentageObject="correctPercentageObject"
+            ref="modal"
+        ></the-modal>
     </div>
 </template>
 
@@ -116,12 +120,14 @@
 import TheHeader from "../layout/TheHeader";
 import TheFooter from "../layout/TheFooter";
 import TheSidebar from "../layout/TheSidebar";
+import TheModal from "../module/TheModal";
 
 export default {
     components: {
         TheHeader,
         TheFooter,
-        TheSidebar
+        TheSidebar,
+        TheModal
     },
     data() {
         return {
@@ -137,7 +143,8 @@ export default {
             isQuizFinish: false, //クイズが終了したかどうか
             score: 0,
             quizNumber: 1,
-            categoryName: ""
+            categoryName: "",
+            correctPercentageObject: {}
         };
     },
     mounted() {
