@@ -76,3 +76,19 @@
     </nav>
   </header>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      csrf: document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content"),
+    };
+  },
+  props: {
+    auth: {
+      type: Object | Array,
+    },
+  },
+};
+</script>
