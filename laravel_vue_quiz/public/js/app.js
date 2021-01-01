@@ -59830,7 +59830,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("the-header"),
+      _c("the-header", { attrs: { auth: _vm.auth } }),
       _vm._v(" "),
       _c("router-view", { attrs: { errors: _vm.errors } }),
       _vm._v(" "),

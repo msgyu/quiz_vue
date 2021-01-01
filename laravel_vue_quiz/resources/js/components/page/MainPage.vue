@@ -1,6 +1,6 @@
 <template>
     <div>
-        <the-header />
+        <the-header :auth="auth" />
         <router-view :errors="errors" />
         <the-footer />
     </div>
