@@ -27,10 +27,14 @@
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
           <ul class="nav navbar-nav navbar-right" v-if="auth.length === 0">
             <li>
-              <a id="header-nav__login" href="/login">ログイン</a>
+              <router-link id="header-nav__login" to="/login"
+                >ログイン</router-link
+              >
             </li>
             <li>
-              <a id="header-nav__register" href="/register">ユーザー登録</a>
+              <router-link id="header-nav__register" to="/register"
+                >ユーザー登録</router-link
+              >
             </li>
           </ul>
         </div>
