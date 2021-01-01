@@ -20,7 +20,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" id="header-nav__home" href="/">ホーム</a>
+          <router-link class="navbar-brand" id="header-nav__home" to="/">ホーム</router-link>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
           <ul class="nav navbar-nav navbar-right">
