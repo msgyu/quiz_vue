@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "./components/page/Home";
 import Quiz from "./components/page/Quiz";
 import Register from "./components/page/Register";
+import Login from "./components/page/Login";
 
 Vue.use(Router);
 
