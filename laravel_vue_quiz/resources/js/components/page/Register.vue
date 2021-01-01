@@ -201,6 +201,14 @@ export default {
                 .querySelector('meta[name="csrf-token"]')
                 .getAttribute("content")
         };
+    },
+    methods: {
+        async register() {
+            const isValid = await this.$refs.observer.validate();
+            if (isValid) {
+                document.querySelector("#register").submit();
+            }
+        }
     }
 };
 </script>
