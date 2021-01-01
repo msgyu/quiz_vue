@@ -13,5 +13,8 @@ Vue.prototype.$http = axios;
 Vue.use(SocialSharing);
 
 new Vue({
-    router: router
+    router: router,
+    components: {
+        app: MainPage
+    }
 }).$mount("#app");
