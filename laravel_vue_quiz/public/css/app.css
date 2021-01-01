@@ -4634,6 +4634,10 @@ header .header-nav__logo {
   margin-top: -15px;
 }
 
+header .header-nav__drop-down {
+  background: #6f7882;
+}
+
 header #header-nav__home {
   color: #fff;
 }
