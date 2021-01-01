@@ -37,6 +37,40 @@
               >
             </li>
           </ul>
+          <ul class="nav navbar-nav navbar-right" v-if="auth.length !== 0">
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle navbar-brand"
+                id="header-nav__name"
+                data-toggle="dropdown"
+                role="button"
+                aria-expanded="false"
+              >
+                {{ auth.name }}
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu header-nav__drop-down" role="menu">
+                <li>
+                  <router-link
+                    class="navbar-brand"
+                    id="header-nav__mypage"
+                    to="/mypage"
+                    >マイページ</router-link
+                  >
+                  <a class="navbar-brand" id="header-nav__logout">ログアウト</a>
+                  <form
+                    id="logout-form"
+                    action="/logout"
+                    method="POST"
+                    style="display: none;"
+                  >
+                    <input type="hidden" name="_token" :value="csrf" />
+                  </form>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
