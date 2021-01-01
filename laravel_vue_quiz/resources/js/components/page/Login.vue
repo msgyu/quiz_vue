@@ -157,6 +157,19 @@ export default {
                 .querySelector('meta[name="csrf-token"]')
                 .getAttribute("content")
         };
+    },
+    props: {
+        errors: {
+            type: Array | Object
+        }
+    },
+    methods: {
+        async login() {
+            const isValid = await this.$refs.observer.validate();
+            if (isValid) {
+                document.querySelector("#login").submit();
+            }
+        }
     }
 };
 </script>
