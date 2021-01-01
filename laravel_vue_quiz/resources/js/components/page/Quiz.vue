@@ -211,6 +211,13 @@ export default {
             this.isQuizFinish = true;
             this.answerNo = "-";
             this.isAlreadyAnswered = true;
+            this.correctPercentageObject = {
+                correctScore: this.score,
+                mistakeScore: 10 - this.score
+            };
+        },
+        showResult() {
+            this.$refs.modal.render();
         }
     }
 };

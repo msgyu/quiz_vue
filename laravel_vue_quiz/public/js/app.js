@@ -2391,7 +2391,8 @@ __webpack_require__.r(__webpack_exports__);
       //クイズが終了したかどうか
       score: 0,
       quizNumber: 1,
-      categoryName: ""
+      categoryName: "",
+      correctPercentageObject: {}
     };
   },
   mounted: function mounted() {
@@ -2455,6 +2456,13 @@ __webpack_require__.r(__webpack_exports__);
       this.isQuizFinish = true;
       this.answerNo = "-";
       this.isAlreadyAnswered = true;
+      this.correctPercentageObject = {
+        correctScore: this.score,
+        mistakeScore: 10 - this.score
+      };
+    },
+    showResult: function showResult() {
+      this.$refs.modal.render();
     }
   }
 });
