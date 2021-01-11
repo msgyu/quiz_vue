@@ -10,12 +10,13 @@
   <title>4 Answers Quiz 4択クイズ&クイズ徹底解説</title>
 </head>
 
-
 <body>
-  <div id="app">
-    <app :errors="{{ $errors }}" :auth="{{ Auth::user() ?? '[]' }}" />
-  </div>
-  <script src="/js/app.js"></script>
-</body>
+
+  <body>
+    <div id="app">
+      <app :errors="{{ $errors }}" :auth="{{ Auth::user() ?? '[]' }}" />
+    </div>
+    <script src="/js/app.js"></script>
+  </body>
 
 </html>
