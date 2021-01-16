@@ -22,6 +22,17 @@
 <script>
 import TheSidebar from "../layout/TheSidebar";
 export default {
+  data() {
+    return {
+      changeCorrectRatioData: []
+    };
+  },
+  mounted() {
+    this.$http.get("/api/mypage").then(response => {
+      this.changeCorrectRatioData = response.data;
+      console.log(this.changeCorrectRatioData);
+    });
+  },
   components: {
     TheSidebar
   }

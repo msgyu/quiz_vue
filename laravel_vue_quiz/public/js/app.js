@@ -2678,6 +2678,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      changeCorrectRatioData: []
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$http.get("/api/mypage").then(function (response) {
+      _this.changeCorrectRatioData = response.data;
+      console.log(_this.changeCorrectRatioData);
+    });
+  },
   components: {
     TheSidebar: _layout_TheSidebar__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
