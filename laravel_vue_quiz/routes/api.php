@@ -23,4 +23,4 @@ Route::get('information', 'InformationController@index');
 Route::get('category', 'CategoryController@index');
 Route::get('quiz', 'QuizController@index');
 Route::post('/insertRanking', 'RankController@insertRanking');
-Route::get('ranking', 'Api\RankingController@index');
+Route::get('ranking', 'Api\RankController@index');
