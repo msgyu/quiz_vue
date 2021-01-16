@@ -17,45 +17,45 @@ class RankController extends Controller
      */
     public function index()
     {
-        $weekRanking = Rank::with('user')
-            ->select(DB::raw('MAX(rankings.percentage_correct_answer) as percentage_correct_answer, rankings.user_id, rankings.created_at'))
-            ->whereBetween('rankings.created_at', [now()->startOfWeek()->format('Y-m-d'), now()->endOfWeek()->format('Y-m-d')])
+        $weekRank = Rank::with('user')
+            ->select(DB::raw('MAX(ranks.percentage_correct_answer) as percentage_correct_answer, ranks.user_id, ranks.created_at'))
+            ->whereBetween('ranks.created_at', [now()->startOfWeek()->format('Y-m-d'), now()->endOfWeek()->format('Y-m-d')])
             ->limit(5)
             ->orderby('percentage_correct_answer', 'desc')
-            ->groupBy('rankings.user_id')
+            ->groupBy('ranks.user_id')
             ->get();
 
-        $weekRankingData = [
-            'percentage_correct_answer' => $weekRanking->pluck('percentage_correct_answer')->all(),
-            'name' => $weekRanking->pluck('user.name')->all()
+        $weekRankData = [
+            'percentage_correct_answer' => $weekRank->pluck('percentage_correct_answer')->all(),
+            'name' => $weekRank->pluck('user.name')->all()
         ];
 
-        $monthRanking = Rank::with('user')
-            ->select(DB::raw('MAX(rankings.percentage_correct_answer) as percentage_correct_answer, rankings.user_id, rankings.created_at'))
-            ->whereBetween('rankings.created_at', [now()->startOfMonth()->format('Y-m-d'), now()->endOfMonth()->format('Y-m-d')])
+        $monthRank = Rank::with('user')
+            ->select(DB::raw('MAX(ranks.percentage_correct_answer) as percentage_correct_answer, ranks.user_id, ranks.created_at'))
+            ->whereBetween('ranks.created_at', [now()->startOfMonth()->format('Y-m-d'), now()->endOfMonth()->format('Y-m-d')])
             ->limit(5)
             ->orderby('percentage_correct_answer', 'desc')
-            ->groupBy('rankings.user_id')
+            ->groupBy('ranks.user_id')
             ->get();
 
-        $monthRankingData = [
-            'percentage_correct_answer' => $monthRanking->pluck('percentage_correct_answer')->all(),
-            'name' => $monthRanking->pluck('user.name')->all()
+        $monthRankData = [
+            'percentage_correct_answer' => $monthRank->pluck('percentage_correct_answer')->all(),
+            'name' => $monthRank->pluck('user.name')->all()
         ];
 
-        $totalRanking = Rank::with('user')
-            ->select(DB::raw('MAX(rankings.percentage_correct_answer) as percentage_correct_answer, rankings.user_id, rankings.created_at'))
+        $totalRank = Rank::with('user')
+            ->select(DB::raw('MAX(ranks.percentage_correct_answer) as percentage_correct_answer, ranks.user_id, ranks.created_at'))
             ->limit(5)
             ->orderby('percentage_correct_answer', 'desc')
-            ->groupBy('rankings.user_id')
+            ->groupBy('ranks.user_id')
             ->get();
 
-        $totalRankingData = [
-            'percentage_correct_answer' => $totalRanking->pluck('percentage_correct_answer')->all(),
-            'name' => $totalRanking->pluck('user.name')->all()
+        $totalRankData = [
+            'percentage_correct_answer' => $totalRank->pluck('percentage_correct_answer')->all(),
+            'name' => $totalRank->pluck('user.name')->all()
         ];
 
 
-        return ['weekRankingData' => $weekRankingData, 'monthRankingData' => $monthRankingData, 'totalRankingData' => $totalRankingData];
+        return ['weekRankData' => $weekRankData, 'monthRankData' => $monthRankData, 'totalRankData' => $totalRankData];
     }
 }
