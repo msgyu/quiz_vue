@@ -22,3 +22,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('information', 'InformationController@index');
 Route::get('category', 'CategoryController@index');
 Route::get('quiz', 'QuizController@index');
+Route::post('/insertRanking', 'RankController@insertRanking');

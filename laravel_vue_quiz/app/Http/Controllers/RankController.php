@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rank;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RankController extends Controller
 {
@@ -12,6 +13,16 @@ class RankController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    /**
+     *
+     *
+     * @return void
+     */
+    public function __construct(Rank $rank)
+    {
+        $this->rank = $rank;
+    }
+
     public function index()
     {
         //
@@ -81,5 +92,14 @@ class RankController extends Controller
     public function destroy(Rank $rank)
     {
         //
+    }
+
+    public function insertRanking(Request $request)
+    {
+        if (Auth::check()) {
+            $correctRatio = $request->input('correctRatio');
+            $this->rank->insertScore((int) $correctRatio);
+        }
+        return redirect('/');
     }
 }
