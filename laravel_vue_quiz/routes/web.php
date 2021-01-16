@@ -20,6 +20,9 @@ Route::get('/quiz', function () {
 Route::get('/register', function () {
     return view('auth.register.index');
 });
+Route::get('/mypage', function () {
+    return view('mypage.index');
+});
 Route::post('/register', 'Auth\RegisterController@register');
 Route::get('/login', function () {
     return view('auth.login.index');
