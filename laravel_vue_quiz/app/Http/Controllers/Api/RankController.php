@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\Rank;
 
 class RankController extends Controller
@@ -17,7 +17,7 @@ class RankController extends Controller
      */
     public function index()
     {
-        $weekRanking = Ranking::with('user')
+        $weekRanking = Rank::with('user')
             ->select(DB::raw('MAX(rankings.percentage_correct_answer) as percentage_correct_answer, rankings.user_id, rankings.created_at'))
             ->whereBetween('rankings.created_at', [now()->startOfWeek()->format('Y-m-d'), now()->endOfWeek()->format('Y-m-d')])
             ->limit(5)
@@ -30,7 +30,7 @@ class RankController extends Controller
             'name' => $weekRanking->pluck('user.name')->all()
         ];
 
-        $monthRanking = Ranking::with('user')
+        $monthRanking = Rank::with('user')
             ->select(DB::raw('MAX(rankings.percentage_correct_answer) as percentage_correct_answer, rankings.user_id, rankings.created_at'))
             ->whereBetween('rankings.created_at', [now()->startOfMonth()->format('Y-m-d'), now()->endOfMonth()->format('Y-m-d')])
             ->limit(5)
@@ -43,7 +43,7 @@ class RankController extends Controller
             'name' => $monthRanking->pluck('user.name')->all()
         ];
 
-        $totalRanking = Ranking::with('user')
+        $totalRanking = Rank::with('user')
             ->select(DB::raw('MAX(rankings.percentage_correct_answer) as percentage_correct_answer, rankings.user_id, rankings.created_at'))
             ->limit(5)
             ->orderby('percentage_correct_answer', 'desc')
