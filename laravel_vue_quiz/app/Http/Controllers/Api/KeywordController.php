@@ -8,5 +8,20 @@ use App\Models\Keyword;
 
 class KeywordController extends Controller
 {
-    //
+    /**
+     *
+     * キーワードコントローラー初期処理アクション
+     *
+     * @return aray
+     */
+    public function index(Request $request)
+    {
+        $initial = $request->input('initial');
+        $keyword = Keyword::with('category')
+            ->where('keywords.initial', '=',  $initial)
+            ->orderby('keywords.keyword')
+            ->get();
+
+        return $keyword;
+    }
 }
