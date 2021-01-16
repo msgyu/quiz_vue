@@ -248,25 +248,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -39608,65 +39589,69 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass: "modal fade",
-        attrs: {
-          id: "modal-result",
-          tabindex: "-1",
-          "aria-hidden": "true",
-          role: "dialog"
-        }
-      },
-      [
-        _c("div", { staticClass: "modal-dialog" }, [
-          _c("div", { staticClass: "modal-content" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "modal-body text-center" },
-              [
-                _c("pie-chart", {
-                  ref: "chart",
-                  attrs: { chartData: _vm.chartData }
-                }),
-                _vm._v(" "),
-                _c("div", [
-                  _vm._v(
-                    "\n                        正解率\n                        " +
-                      _vm._s(_vm.correctPercentageObject["correctScore"] * 10) +
-                      " %\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("input", { attrs: { type: "hidden", name: "correctRatio" } })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
+  return _c(
+    "form",
+    { attrs: { action: "/insertRanking", method: "POST", id: "finish-form" } },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "modal fade",
+          attrs: {
+            id: "modal-result",
+            tabindex: "-1",
+            "aria-hidden": "true",
+            role: "dialog"
+          }
+        },
+        [
+          _c("div", { staticClass: "modal-dialog" }, [
+            _c("div", { staticClass: "modal-content" }, [
+              _vm._m(0),
+              _vm._v(" "),
               _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { type: "button" },
-                  on: { click: _vm.quizFinish }
-                },
+                "div",
+                { staticClass: "modal-body text-center" },
                 [
-                  _vm._v(
-                    "\n                        終了する\n                    "
-                  )
-                ]
-              )
+                  _c("pie-chart", {
+                    ref: "chart",
+                    attrs: { chartData: _vm.chartData }
+                  }),
+                  _vm._v(" "),
+                  _c("div", [
+                    _vm._v(
+                      "\n            正解率\n            " +
+                        _vm._s(
+                          _vm.correctPercentageObject["correctScore"] * 10
+                        ) +
+                        " %\n          "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "correctRatio" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: { type: "button" },
+                    on: { click: _vm.quizFinish }
+                  },
+                  [_vm._v("終了する")]
+                )
+              ])
             ])
           ])
-        ])
-      ]
-    )
-  ])
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
