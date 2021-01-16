@@ -10,6 +10,11 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function rank()
+    {
+        return $this->hasOne('App\Models\Rank');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
