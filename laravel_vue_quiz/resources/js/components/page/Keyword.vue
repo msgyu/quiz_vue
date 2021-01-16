@@ -29,6 +29,19 @@ import TheSidebar from "../layout/TheSidebar";
 export default {
   components: {
     TheSidebar
+  },
+  data() {
+    return {
+      keyword: [],
+      initial: ""
+    };
+  },
+  mounted() {
+    const initial = this.$route.query.initial;
+    this.initial = initial;
+    this.$http.get(`/api/keyword?initial=${initial}`).then(response => {
+      this.keyword = response.data;
+    });
   }
 };
 </script>

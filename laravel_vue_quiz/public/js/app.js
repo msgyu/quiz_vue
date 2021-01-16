@@ -2464,6 +2464,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     TheSidebar: _layout_TheSidebar__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      keyword: [],
+      initial: ""
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    var initial = this.$route.query.initial;
+    this.initial = initial;
+    this.$http.get("/api/keyword?initial=".concat(initial)).then(function (response) {
+      _this.keyword = response.data;
+    });
   }
 });
 
