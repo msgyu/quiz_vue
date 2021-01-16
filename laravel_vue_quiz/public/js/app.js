@@ -2030,6 +2030,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2039,6 +2040,11 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     auth: {
       type: Object | Array
+    }
+  },
+  methods: {
+    logout: function logout() {
+      document.querySelector("#logout-form").submit();
     }
   }
 });
@@ -58977,7 +58983,8 @@ var render = function() {
                               "a",
                               {
                                 staticClass: "navbar-brand",
-                                attrs: { id: "header-nav__logout" }
+                                attrs: { id: "header-nav__logout" },
+                                on: { click: _vm.logout }
                               },
                               [_vm._v("ログアウト")]
                             ),
