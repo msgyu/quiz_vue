@@ -59995,32 +59995,42 @@ var render = function() {
         { staticClass: "container" },
         [
           _c("article", { staticClass: "col-md-8 col-xs-12" }, [
-            _c("section", [
-              _c("h2", { staticClass: "keyword-h2" }, [
-                _c("img", {
-                  staticClass: "keyword__logo",
-                  attrs: { src: "images/search-mark.png" }
-                }),
-                _vm._v(
-                  "\n            【" +
-                    _vm._s() +
-                    "】からはじまるキーワード（" +
-                    _vm._s() +
-                    "語)\n          "
-                )
-              ]),
-              _vm._v(" "),
-              _c("dl", [
-                _c("dt", [_vm._v(_vm._s())]),
+            _c(
+              "section",
+              [
+                _c("h2", { staticClass: "keyword-h2" }, [
+                  _c("img", {
+                    staticClass: "keyword__logo",
+                    attrs: { src: "images/search-mark.png" }
+                  }),
+                  _vm._v(
+                    "\n            【" +
+                      _vm._s(_vm.initial) +
+                      "】からはじまるキーワード（" +
+                      _vm._s(_vm.keyword.length) +
+                      "語)\n          "
+                  )
+                ]),
                 _vm._v(" "),
-                _c("dd", { staticClass: "keyword__description" }, [
-                  _vm._v("\n              " + _vm._s() + "\n              "),
-                  _c("p", { staticClass: "text-right" }, [
-                    _vm._v("カテゴリー：" + _vm._s())
+                _vm._l(_vm.keyword, function(key, index) {
+                  return _c("dl", { key: index }, [
+                    _c("dt", [_vm._v(_vm._s(key.keyword))]),
+                    _vm._v(" "),
+                    _c("dd", { staticClass: "keyword__description" }, [
+                      _vm._v(
+                        "\n              " +
+                          _vm._s(key.description) +
+                          "\n              "
+                      ),
+                      _c("p", { staticClass: "text-right" }, [
+                        _vm._v("カテゴリー：" + _vm._s(key.category.name))
+                      ])
+                    ])
                   ])
-                ])
-              ])
-            ])
+                })
+              ],
+              2
+            )
           ]),
           _vm._v(" "),
           _c("the-sidebar")
