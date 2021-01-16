@@ -48,7 +48,10 @@ export default {
         hoverBorderWidth: 10,
         labels: ["正解", "不正解"],
         datasets: []
-      }
+      },
+      csrf: document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content")
     };
   },
   methods: {

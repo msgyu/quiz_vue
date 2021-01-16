@@ -2177,7 +2177,8 @@ __webpack_require__.r(__webpack_exports__);
         hoverBorderWidth: 10,
         labels: ["正解", "不正解"],
         datasets: []
-      }
+      },
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content")
     };
   },
   methods: {
