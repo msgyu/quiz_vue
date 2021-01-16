@@ -14,4 +14,9 @@ class Category extends Model
     {
         return $this->hasMany('App\Models\Quiz');
     }
+
+    public function keyword()
+    {
+        return $this->hasMany('App\Models\Keyword');
+    }
 }
