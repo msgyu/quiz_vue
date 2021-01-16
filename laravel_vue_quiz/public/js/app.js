@@ -2674,6 +2674,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -60243,7 +60245,30 @@ var render = function() {
       _c(
         "div",
         { staticClass: "container" },
-        [_vm._m(0), _vm._v(" "), _c("the-sidebar")],
+        [
+          _c("article", { staticClass: "col-md-8 col-xs-12" }, [
+            _c("section", { staticClass: "article-section" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _vm.changeCorrectRatioData.length !== 0
+                ? _c("h3", [
+                    _vm._v(
+                      "直近" +
+                        _vm._s(
+                          _vm.changeCorrectRatioData.percentage_correct_answer
+                            .length
+                        ) +
+                        "回の正解率推移"
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("canvas")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("the-sidebar")
+        ],
         1
       )
     ])
@@ -60254,20 +60279,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("article", { staticClass: "col-md-8 col-xs-12" }, [
-      _c("section", { staticClass: "article-section" }, [
-        _c("h2", { staticClass: "mypage-h2" }, [
-          _c("img", {
-            staticClass: "mypage__logo",
-            attrs: { src: "/images/mypage-icon.png" }
-          }),
-          _vm._v("マイページ\n          ")
-        ]),
-        _vm._v(" "),
-        _c("h3", [_vm._v("直近 回の正解率推移")]),
-        _vm._v(" "),
-        _c("canvas")
-      ])
+    return _c("h2", { staticClass: "mypage-h2" }, [
+      _c("img", {
+        staticClass: "mypage__logo",
+        attrs: { src: "/images/mypage-icon.png" }
+      }),
+      _vm._v("マイページ\n          ")
     ])
   }
 ]
