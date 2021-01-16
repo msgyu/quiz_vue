@@ -76753,6 +76753,7 @@ window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_4___default.a;
 __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/npm.js");
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$http = axios__WEBPACK_IMPORTED_MODULE_3___default.a;
+axios__WEBPACK_IMPORTED_MODULE_3___default.a.defaults.headers.common["Authorization"] = "Bearer " + document.querySelector('meta[name="api-token"]').getAttribute("content");
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_social_sharing__WEBPACK_IMPORTED_MODULE_2___default.a);
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   router: _router_js__WEBPACK_IMPORTED_MODULE_1__["default"],
