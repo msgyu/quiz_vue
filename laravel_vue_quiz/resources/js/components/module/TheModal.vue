@@ -15,7 +15,12 @@
               正解率
               {{ correctPercentageObject["correctScore"] * 10 }} %
             </div>
-            <input type="hidden" name="correctRatio" />
+            <input
+              type="hidden"
+              name="correctRatio"
+              :value="correctPercentageObject['correctScore'] * 10"
+            />
+            <input type="hidden" name="_token" :value="csrf" />
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" @click="quizFinish">終了する</button>
@@ -50,6 +55,7 @@ export default {
         datasets: []
       },
       csrf: document
+        //headのmetaタグを選択肢し、その中のcontentを取得する。
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content")
     };
@@ -68,7 +74,7 @@ export default {
       this.$refs.chart.renderPieChart();
     },
     quizFinish() {
-      location.href = "/";
+      document.querySelector("#finish-form").submit();
     }
   }
 };

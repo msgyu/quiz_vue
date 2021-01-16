@@ -2157,6 +2157,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2178,7 +2183,8 @@ __webpack_require__.r(__webpack_exports__);
         labels: ["正解", "不正解"],
         datasets: []
       },
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+      csrf: document //headのmetaタグを選択肢し、その中のcontentを取得する。
+      .querySelector('meta[name="csrf-token"]').getAttribute("content")
     };
   },
   methods: {
@@ -2190,7 +2196,7 @@ __webpack_require__.r(__webpack_exports__);
       this.$refs.chart.renderPieChart();
     },
     quizFinish: function quizFinish() {
-      location.href = "/";
+      document.querySelector("#finish-form").submit();
     }
   }
 });
@@ -59392,7 +59398,15 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("input", {
-                    attrs: { type: "hidden", name: "correctRatio" }
+                    attrs: { type: "hidden", name: "correctRatio" },
+                    domProps: {
+                      value: _vm.correctPercentageObject["correctScore"] * 10
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_token" },
+                    domProps: { value: _vm.csrf }
                   })
                 ],
                 1
