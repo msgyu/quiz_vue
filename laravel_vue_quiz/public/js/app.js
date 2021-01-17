@@ -2380,14 +2380,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2482,6 +2474,16 @@ __webpack_require__.r(__webpack_exports__);
         text: text,
         type: type
       });
+    },
+    checkAll: function checkAll() {
+      var val = [];
+      this.category.forEach(function (element) {
+        val.push(element.id);
+      });
+      this.categories = val;
+    },
+    checkAllOff: function checkAllOff() {
+      this.categories = [];
     }
   }
 });
@@ -60569,7 +60571,36 @@ var render = function() {
                       ])
                     }),
                     _vm._v(" "),
-                    _vm._m(2),
+                    _c("div", [
+                      _vm._v(
+                        "\n                            全項目チェック\n                            "
+                      ),
+                      _c(
+                        "button",
+                        {
+                          attrs: { type: "button" },
+                          on: { click: _vm.checkAll }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                ON\n                            "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          attrs: { type: "button" },
+                          on: { click: _vm.checkAllOff }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                OFF\n                            "
+                          )
+                        ]
+                      )
+                    ]),
                     _vm._v(" "),
                     _c(
                       "button",
@@ -60596,7 +60627,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("section", { staticClass: "home-quiz__ranking" }, [
-                _vm._m(3),
+                _vm._m(2),
                 _vm._v(" "),
                 _c("div", [
                   _c("label", [
@@ -60717,7 +60748,7 @@ var render = function() {
                 "section",
                 { staticClass: "home__notice" },
                 [
-                  _vm._m(4),
+                  _vm._m(3),
                   _vm._v(" "),
                   _vm._l(_vm.information, function(info, index) {
                     return _c("dl", { key: index }, [
@@ -60779,35 +60810,6 @@ var staticRenderFns = [
         attrs: { src: "/images/directory-icon.png" }
       }),
       _vm._v("出題設定\n                    ")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _vm._v(
-        "\n                            全項目チェック\n                            "
-      ),
-      _c(
-        "button",
-        { attrs: { type: "button", name: "check_all", value: "1" } },
-        [
-          _vm._v(
-            "\n                                ON\n                            "
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { attrs: { type: "button", name: "check_all_off", value: "1" } },
-        [
-          _vm._v(
-            "\n                                OFF\n                            "
-          )
-        ]
-      )
     ])
   },
   function() {
