@@ -52,7 +52,9 @@ class KeywordController extends AdminController
         $show->field('initial', __('Initial'));
         $show->field('keyword', __('Keyword'));
         $show->field('description', __('Description'));
-        $show->field('categories_id', __('Categories id'));
+        $show->category('Category information', function ($category) {
+            $category->name();
+        });
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
