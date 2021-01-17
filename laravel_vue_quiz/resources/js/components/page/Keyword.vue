@@ -37,11 +37,20 @@ export default {
     };
   },
   mounted() {
-    const initial = this.$route.query.initial;
-    this.initial = initial;
-    this.$http.get(`/api/keyword?initial=${initial}`).then(response => {
-      this.keyword = response.data;
-    });
+    this.initial = this.$route.query.initial;
+    this.setkeyword(this.initial);
+  },
+  methods: {
+    setkeyword() {
+      this.$http.get(`/api/keyword?initial=${this.initial}`).then(response => {
+        this.keyword = response.data;
+      });
+    }
+  },
+  beforeRouteUpdate(to, from, next) {
+    next();
+    this.initial = this.$route.query.initial;
+    this.setkeyword(this.initial);
   }
 };
 </script>
