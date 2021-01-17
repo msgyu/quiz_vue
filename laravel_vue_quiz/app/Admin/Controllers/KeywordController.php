@@ -31,7 +31,7 @@ class KeywordController extends AdminController
         $grid->column('initial', __('Initial'));
         $grid->column('keyword', __('Keyword'));
         $grid->column('description', __('Description'));
-        $grid->column('categories_id', __('Categories id'));
+        $grid->column('category.name', __('Categories name'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
