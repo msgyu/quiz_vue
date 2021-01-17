@@ -4,6 +4,8 @@ import Home from "./components/page/Home";
 import Quiz from "./components/page/Quiz";
 import Register from "./components/page/Register";
 import Login from "./components/page/Login";
+import Mypage from "./components/page/Mypage";
+import Keyword from "./components/page/Keyword";
 
 Vue.use(Router);
 
@@ -29,6 +31,16 @@ export default new Router({
             path: "/login",
             name: "login",
             component: Login
+        },
+        {
+            path: "/mypage",
+            name: "mypage",
+            component: Mypage
+        },
+        {
+            path: "/keyword",
+            name: "keyword",
+            component: Keyword
         }
     ]
 });

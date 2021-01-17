@@ -253,20 +253,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -287,7 +273,9 @@ __webpack_require__.r(__webpack_exports__);
         hoverBorderWidth: 10,
         labels: ["正解", "不正解"],
         datasets: []
-      }
+      },
+      csrf: document //headのmetaタグを選択肢し、その中のcontentを取得する。
+      .querySelector('meta[name="csrf-token"]').getAttribute("content")
     };
   },
   methods: {
@@ -299,7 +287,7 @@ __webpack_require__.r(__webpack_exports__);
       this.$refs.chart.renderPieChart();
     },
     quizFinish: function quizFinish() {
-      location.href = "/";
+      document.querySelector("#finish-form").submit();
     }
   }
 });
@@ -39375,7 +39363,7 @@ var render = function() {
                   [
                     _c("network", { attrs: { network: "line" } }, [
                       _c("i", { staticClass: "fab fa-line" }),
-                      _vm._v(" Line ")
+                      _vm._v(" Line\n          ")
                     ])
                   ],
                   1
@@ -39412,181 +39400,348 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _vm._m(0)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "sidebar-keywords" }, [
+    _c("section", { staticClass: "sidebar-keywords" }, [
       _c("h3", { staticClass: "text-center sidebar-keywords-h3" }, [
         _vm._v("キーワード集")
       ]),
       _vm._v(" "),
       _c("ul", { staticClass: "sidebar-keywords__links" }, [
-        _c("li", [
-          _c("a", { attrs: { href: "/keyword?initial=A" } }, [_vm._v("Ａ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=B" } }, [_vm._v("Ｂ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=C" } }, [_vm._v("Ｃ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=D" } }, [_vm._v("Ｄ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=E" } }, [_vm._v("Ｅ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=F" } }, [_vm._v("Ｆ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=G" } }, [_vm._v("Ｇ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=H" } }, [_vm._v("Ｈ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=I" } }, [_vm._v("Ｉ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=J" } }, [_vm._v("Ｊ")])
-        ]),
+        _c(
+          "li",
+          [
+            _c("router-link", { attrs: { to: "/keyword?initial=A" } }, [
+              _vm._v("Ａ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=B" } }, [
+              _vm._v("Ｂ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=C" } }, [
+              _vm._v("Ｃ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=D" } }, [
+              _vm._v("Ｄ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=E" } }, [
+              _vm._v("Ｅ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=F" } }, [
+              _vm._v("Ｆ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=G" } }, [
+              _vm._v("Ｇ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=H" } }, [
+              _vm._v("Ｈ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=I" } }, [
+              _vm._v("Ｉ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=J" } }, [
+              _vm._v("Ｊ")
+            ])
+          ],
+          1
+        ),
         _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/keyword?initial=K" } }, [_vm._v("Ｋ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=L" } }, [_vm._v("Ｌ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=M" } }, [_vm._v("Ｍ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=N" } }, [_vm._v("Ｎ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=O" } }, [_vm._v("Ｏ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=P" } }, [_vm._v("Ｐ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=Q" } }, [_vm._v("Ｑ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=R" } }, [_vm._v("Ｒ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=S" } }, [_vm._v("Ｓ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=T" } }, [_vm._v("Ｔ")])
-        ]),
+        _c(
+          "li",
+          [
+            _c("router-link", { attrs: { to: "/keyword?initial=K" } }, [
+              _vm._v("Ｋ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=L" } }, [
+              _vm._v("Ｌ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=M" } }, [
+              _vm._v("Ｍ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=N" } }, [
+              _vm._v("Ｎ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=O" } }, [
+              _vm._v("Ｏ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=P" } }, [
+              _vm._v("Ｐ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=Q" } }, [
+              _vm._v("Ｑ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=R" } }, [
+              _vm._v("Ｒ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=S" } }, [
+              _vm._v("Ｓ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=T" } }, [
+              _vm._v("Ｔ")
+            ])
+          ],
+          1
+        ),
         _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/keyword?initial=U" } }, [_vm._v("Ｕ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=V" } }, [_vm._v("Ｖ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=W" } }, [_vm._v("Ｗ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=X" } }, [_vm._v("Ｘ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=Y" } }, [_vm._v("Ｙ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=Z" } }, [_vm._v("Ｚ")])
-        ]),
+        _c(
+          "li",
+          [
+            _c("router-link", { attrs: { to: "/keyword?initial=U" } }, [
+              _vm._v("Ｕ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=V" } }, [
+              _vm._v("Ｖ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=W" } }, [
+              _vm._v("Ｗ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=X" } }, [
+              _vm._v("Ｘ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=Y" } }, [
+              _vm._v("Ｙ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=Z" } }, [
+              _vm._v("Ｚ")
+            ])
+          ],
+          1
+        ),
         _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/keyword?initial=あ" } }, [_vm._v("あ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=い" } }, [_vm._v("い")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=う" } }, [_vm._v("う")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=え" } }, [_vm._v("え")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=お" } }, [_vm._v("お")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=か" } }, [_vm._v("か")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=き" } }, [_vm._v("き")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=く" } }, [_vm._v("く")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=け" } }, [_vm._v("け")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=こ" } }, [_vm._v("こ")])
-        ]),
+        _c(
+          "li",
+          [
+            _c("router-link", { attrs: { to: "/keyword?initial=あ" } }, [
+              _vm._v("あ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=い" } }, [
+              _vm._v("い")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=う" } }, [
+              _vm._v("う")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=え" } }, [
+              _vm._v("え")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=お" } }, [
+              _vm._v("お")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=か" } }, [
+              _vm._v("か")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=き" } }, [
+              _vm._v("き")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=く" } }, [
+              _vm._v("く")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=け" } }, [
+              _vm._v("け")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=こ" } }, [
+              _vm._v("こ")
+            ])
+          ],
+          1
+        ),
         _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/keyword?initial=さ" } }, [_vm._v("さ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=し" } }, [_vm._v("し")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=す" } }, [_vm._v("す")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=せ" } }, [_vm._v("せ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=そ" } }, [_vm._v("そ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=た" } }, [_vm._v("た")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=ち" } }, [_vm._v("ち")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=つ" } }, [_vm._v("つ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=て" } }, [_vm._v("て")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=と" } }, [_vm._v("と")])
-        ]),
+        _c(
+          "li",
+          [
+            _c("router-link", { attrs: { to: "/keyword?initial=さ" } }, [
+              _vm._v("さ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=し" } }, [
+              _vm._v("し")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=す" } }, [
+              _vm._v("す")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=せ" } }, [
+              _vm._v("せ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=そ" } }, [
+              _vm._v("そ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=た" } }, [
+              _vm._v("た")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=ち" } }, [
+              _vm._v("ち")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=つ" } }, [
+              _vm._v("つ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=て" } }, [
+              _vm._v("て")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=と" } }, [
+              _vm._v("と")
+            ])
+          ],
+          1
+        ),
         _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/keyword?initial=な" } }, [_vm._v("な")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=に" } }, [_vm._v("に")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=ぬ" } }, [_vm._v("ぬ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=ね" } }, [_vm._v("ね")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=の" } }, [_vm._v("の")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=は" } }, [_vm._v("は")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=ひ" } }, [_vm._v("ひ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=ふ" } }, [_vm._v("ふ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=へ" } }, [_vm._v("へ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=ほ" } }, [_vm._v("ほ")])
-        ]),
+        _c(
+          "li",
+          [
+            _c("router-link", { attrs: { to: "/keyword?initial=な" } }, [
+              _vm._v("な")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=に" } }, [
+              _vm._v("に")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=ぬ" } }, [
+              _vm._v("ぬ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=ね" } }, [
+              _vm._v("ね")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=の" } }, [
+              _vm._v("の")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=は" } }, [
+              _vm._v("は")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=ひ" } }, [
+              _vm._v("ひ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=ふ" } }, [
+              _vm._v("ふ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=へ" } }, [
+              _vm._v("へ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=ほ" } }, [
+              _vm._v("ほ")
+            ])
+          ],
+          1
+        ),
         _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/keyword?initial=ま" } }, [_vm._v("ま")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=み" } }, [_vm._v("み")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=む" } }, [_vm._v("む")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=め" } }, [_vm._v("め")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=も" } }, [_vm._v("も")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=ら" } }, [_vm._v("ら")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=り" } }, [_vm._v("り")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=る" } }, [_vm._v("る")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=れ" } }, [_vm._v("れ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=ろ" } }, [_vm._v("ろ")])
-        ]),
+        _c(
+          "li",
+          [
+            _c("router-link", { attrs: { to: "/keyword?initial=ま" } }, [
+              _vm._v("ま")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=み" } }, [
+              _vm._v("み")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=む" } }, [
+              _vm._v("む")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=め" } }, [
+              _vm._v("め")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=も" } }, [
+              _vm._v("も")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=ら" } }, [
+              _vm._v("ら")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=り" } }, [
+              _vm._v("り")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=る" } }, [
+              _vm._v("る")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=れ" } }, [
+              _vm._v("れ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=ろ" } }, [
+              _vm._v("ろ")
+            ])
+          ],
+          1
+        ),
         _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/keyword?initial=や" } }, [_vm._v("や")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=ゆ" } }, [_vm._v("ゆ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=よ" } }, [_vm._v("よ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=わ" } }, [_vm._v("わ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/keyword?initial=を" } }, [_vm._v("を")])
-        ])
+        _c(
+          "li",
+          [
+            _c("router-link", { attrs: { to: "/keyword?initial=や" } }, [
+              _vm._v("や")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=ゆ" } }, [
+              _vm._v("ゆ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=よ" } }, [
+              _vm._v("よ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=わ" } }, [
+              _vm._v("わ")
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/keyword?initial=を" } }, [
+              _vm._v("を")
+            ])
+          ],
+          1
+        )
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -39608,65 +39763,77 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass: "modal fade",
-        attrs: {
-          id: "modal-result",
-          tabindex: "-1",
-          "aria-hidden": "true",
-          role: "dialog"
-        }
-      },
-      [
-        _c("div", { staticClass: "modal-dialog" }, [
-          _c("div", { staticClass: "modal-content" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "modal-body text-center" },
-              [
-                _c("pie-chart", {
-                  ref: "chart",
-                  attrs: { chartData: _vm.chartData }
-                }),
-                _vm._v(" "),
-                _c("div", [
-                  _vm._v(
-                    "\n                        正解率\n                        " +
-                      _vm._s(_vm.correctPercentageObject["correctScore"] * 10) +
-                      " %\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("input", { attrs: { type: "hidden", name: "correctRatio" } })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
+  return _c(
+    "form",
+    { attrs: { action: "/insertRanking", method: "POST", id: "finish-form" } },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "modal fade",
+          attrs: {
+            id: "modal-result",
+            tabindex: "-1",
+            "aria-hidden": "true",
+            role: "dialog"
+          }
+        },
+        [
+          _c("div", { staticClass: "modal-dialog" }, [
+            _c("div", { staticClass: "modal-content" }, [
+              _vm._m(0),
+              _vm._v(" "),
               _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { type: "button" },
-                  on: { click: _vm.quizFinish }
-                },
+                "div",
+                { staticClass: "modal-body text-center" },
                 [
-                  _vm._v(
-                    "\n                        終了する\n                    "
-                  )
-                ]
-              )
+                  _c("pie-chart", {
+                    ref: "chart",
+                    attrs: { chartData: _vm.chartData }
+                  }),
+                  _vm._v(" "),
+                  _c("div", [
+                    _vm._v(
+                      "\n            正解率\n            " +
+                        _vm._s(
+                          _vm.correctPercentageObject["correctScore"] * 10
+                        ) +
+                        " %\n          "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "correctRatio" },
+                    domProps: {
+                      value: _vm.correctPercentageObject["correctScore"] * 10
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_token" },
+                    domProps: { value: _vm.csrf }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: { type: "button" },
+                    on: { click: _vm.quizFinish }
+                  },
+                  [_vm._v("終了する")]
+                )
+              ])
             ])
           ])
-        ])
-      ]
-    )
-  ])
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = [
   function() {

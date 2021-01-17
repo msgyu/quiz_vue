@@ -20,10 +20,18 @@ Route::get('/quiz', function () {
 Route::get('/register', function () {
     return view('auth.register.index');
 });
+Route::get('/mypage', function () {
+    return view('mypage.index');
+});
+Route::get('/keyword', function () {
+    return view('keyword.index');
+});
 Route::post('/register', 'Auth\RegisterController@register');
 Route::get('/login', function () {
     return view('auth.login.index');
 });
+
 Route::post('/login', 'Auth\LoginController@login');
 Route::post('/logout', 'Auth\LoginController@logout');
 Route::get('/quiz/auth', 'QuizController@create');
+Route::post('/insertRanking', 'RankController@insertRanking');
