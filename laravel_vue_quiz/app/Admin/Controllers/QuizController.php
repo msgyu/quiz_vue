@@ -31,8 +31,11 @@ class QuizController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('title', __('Title'));
         $grid->column('image_src', __('Image src'));
-        $grid->column('answer_id', __('Answer id'));
-        $grid->column('category_id', __('Category id'));
+        $grid->column('answer.answer_1',  __('Answer 1'));
+        $grid->column('answer.answer_2',  __('Answer 2'));
+        $grid->column('answer.answer_3',  __('Answer 3'));
+        $grid->column('answer.answer_4',  __('Answer 4'));
+        $grid->column('category.name', __('Categories name'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
