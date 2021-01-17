@@ -2991,9 +2991,17 @@ __webpack_require__.r(__webpack_exports__);
     this.$http.get("/api/quiz?categories=".concat(categories)).then(function (response) {
       _this.quizData = response.data;
 
-      _this.findNextQuiz(0);
+      if (_this.quizData.length < 10) {
+        alert("クイズ10問以下のため、初期画面に戻ります。カテゴリーを選択し直してください");
+        location.href = "/";
+      } else {
+        _this.findNextQuiz(0);
 
-      loader.hide();
+        loader.hide();
+      }
+    })["catch"](function (error) {
+      alert("クイズの読み込みに失敗したため、初期画面に戻ります");
+      location.href = "/";
     });
   },
   methods: {
