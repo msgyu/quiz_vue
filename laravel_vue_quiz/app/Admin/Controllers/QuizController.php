@@ -3,6 +3,8 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Quiz;
+use App\Models\Category;
+use App\Models\Answer;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
