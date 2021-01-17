@@ -6,6 +6,7 @@ import jQuery from "jquery";
 import MainPage from "./components/page/MainPage";
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
+import Notifications from "vue-notification";
 
 window.$ = window.jQuery = jQuery;
 require("bootstrap");
@@ -17,6 +18,7 @@ axios.defaults.headers.common["Authorization"] =
 
 Vue.use(SocialSharing);
 Vue.use(Loading);
+Vue.use(Notifications);
 
 new Vue({
     router: router,
