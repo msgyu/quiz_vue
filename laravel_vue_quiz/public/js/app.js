@@ -2249,10 +2249,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _layout_TheHeader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../layout/TheHeader */ "./resources/js/components/layout/TheHeader.vue");
-/* harmony import */ var _layout_TheFooter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../layout/TheFooter */ "./resources/js/components/layout/TheFooter.vue");
-/* harmony import */ var _layout_TheSidebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../layout/TheSidebar */ "./resources/js/components/layout/TheSidebar.vue");
-/* harmony import */ var _module_BarChart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../module/BarChart */ "./resources/js/components/module/BarChart.vue");
+/* harmony import */ var _layout_TheSidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../layout/TheSidebar */ "./resources/js/components/layout/TheSidebar.vue");
+/* harmony import */ var _module_BarChart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../module/BarChart */ "./resources/js/components/module/BarChart.vue");
 //
 //
 //
@@ -2390,23 +2388,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    TheHeader: _layout_TheHeader__WEBPACK_IMPORTED_MODULE_0__["default"],
-    TheFooter: _layout_TheFooter__WEBPACK_IMPORTED_MODULE_1__["default"],
-    TheSidebar: _layout_TheSidebar__WEBPACK_IMPORTED_MODULE_2__["default"],
-    BarChart: _module_BarChart__WEBPACK_IMPORTED_MODULE_3__["default"]
+    TheSidebar: _layout_TheSidebar__WEBPACK_IMPORTED_MODULE_0__["default"],
+    BarChart: _module_BarChart__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -2417,68 +2404,85 @@ __webpack_require__.r(__webpack_exports__);
       week: {},
       month: {},
       total: {},
-      rankingType: "1"
+      rankingType: "1",
+      selectAll: false
     };
-  },
-  props: {
-    auth: {
-      type: Object | Array
-    }
   },
   mounted: function mounted() {
     var _this = this;
 
-    this.$http.get("/api/information").then(function (response) {
-      _this.information = response.data;
-    });
     this.$http.get("/api/category").then(function (response) {
       _this.category = response.data;
+    });
+    this.$http.get("/api/information").then(function (response) {
+      _this.information = response.data;
     });
     this.$http.get("/api/ranking").then(function (response) {
       _this.rankingAlldata = response.data;
 
       _this.setRanking();
     });
+    var referrer = document.referrer;
+
+    if (referrer.indexOf("/login") !== -1) {
+      this.displayNotification("ログインしました", "info");
+      this.resetReferrer();
+    } else if (referrer.indexOf("/register") !== -1) {
+      this.displayNotification("会員登録しました", "success");
+      this.resetReferrer();
+    }
   },
   methods: {
     goQuiz: function goQuiz() {
       this.$router.push("/quiz?categories=" + this.categories);
+    },
+    setRanking: function setRanking() {
+      var _this2 = this;
+
+      this.week = Object.assign({}, this.week, {
+        labels: this.rankingAlldata.weekRankingData.name,
+        datasets: [{
+          label: ["最高得点率"],
+          backgroundColor: "rgba(0, 170, 248, 0.47)",
+          data: this.rankingAlldata.weekRankingData.percentage_correct_answer
+        }]
+      });
+      this.month = Object.assign({}, this.month, {
+        labels: this.rankingAlldata.monthRankingData.name,
+        datasets: [{
+          label: ["最高得点率"],
+          backgroundColor: "rgba(0, 170, 248, 0.47)",
+          data: this.rankingAlldata.monthRankingData.percentage_correct_answer
+        }]
+      });
+      this.total = Object.assign({}, this.total, {
+        labels: this.rankingAlldata.totalRankingData.name,
+        datasets: [{
+          label: ["最高得点率"],
+          backgroundColor: "rgba(0, 170, 248, 0.47)",
+          data: this.rankingAlldata.totalRankingData.percentage_correct_answer
+        }]
+      });
+      this.$nextTick(function () {
+        _this2.$refs.totalChart.renderBarChart();
+
+        _this2.$refs.monthChart.renderBarChart();
+
+        _this2.$refs.weekChart.renderBarChart();
+      });
+    },
+    resetReferrer: function resetReferrer() {
+      Object.defineProperty(document, "referrer", {
+        value: location.href
+      });
+    },
+    displayNotification: function displayNotification(text, type) {
+      this.$notify({
+        title: "お知らせ",
+        text: text,
+        type: type
+      });
     }
-  },
-  setRanking: function setRanking() {
-    var _this2 = this;
-
-    this.week = Object.assign({}, this.week, {
-      labels: this.rankingAlldata.weekRankingData.name,
-      datasets: [{
-        label: ["最高得点率"],
-        backgroundColor: "rgba(0, 170, 248, 0.47)",
-        data: this.rankingAlldata.weekRankingData.percentage_correct_answer
-      }]
-    });
-    this.month = Object.assign({}, this.month, {
-      labels: this.rankingAlldata.monthRankingData.name,
-      datasets: [{
-        label: ["最高得点率"],
-        backgroundColor: "rgba(0, 170, 248, 0.47)",
-        data: this.rankingAlldata.monthRankingData.percentage_correct_answer
-      }]
-    });
-    this.total = Object.assign({}, this.total, {
-      labels: this.rankingAlldata.totalRankingData.name,
-      datasets: [{
-        label: ["最高得点率"],
-        backgroundColor: "rgba(0, 170, 248, 0.47)",
-        data: this.rankingAlldata.totalRankingData.percentage_correct_answer
-      }]
-    });
-    this.$nextTick(function () {
-      _this2.$refs.totalChart.renderBarChart();
-
-      _this2.$refs.monthChart.renderBarChart();
-
-      _this2.$refs.weekChart.renderBarChart();
-    });
   }
 });
 
@@ -60499,12 +60503,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("the-header"),
-      _vm._v(" "),
-      _c("main", [
+  return _c("div", [
+    _c(
+      "main",
+      [
         _c(
           "div",
           { staticClass: "container" },
@@ -60517,9 +60519,8 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "form",
-                  { attrs: { action: "/quiz", method: "post" } },
                   [
-                    _vm._l(_vm.category, function(category, index) {
+                    _vm._l(_vm.category, function(cate, index) {
                       return _c("label", { key: index }, [
                         _c("input", {
                           directives: [
@@ -60530,11 +60531,11 @@ var render = function() {
                               expression: "categories"
                             }
                           ],
-                          attrs: { type: "checkbox" },
+                          attrs: { type: "checkbox", checked: "" },
                           domProps: {
-                            value: category.id,
+                            value: cate.id,
                             checked: Array.isArray(_vm.categories)
-                              ? _vm._i(_vm.categories, category.id) > -1
+                              ? _vm._i(_vm.categories, cate.id) > -1
                               : _vm.categories
                           },
                           on: {
@@ -60543,7 +60544,7 @@ var render = function() {
                                 $$el = $event.target,
                                 $$c = $$el.checked ? true : false
                               if (Array.isArray($$a)) {
-                                var $$v = category.id,
+                                var $$v = cate.id,
                                   $$i = _vm._i($$a, $$v)
                                 if ($$el.checked) {
                                   $$i < 0 &&
@@ -60562,7 +60563,7 @@ var render = function() {
                         }),
                         _vm._v(
                           "\n                            " +
-                            _vm._s(category.name) +
+                            _vm._s(cate.name) +
                             " \n                        "
                         )
                       ])
@@ -60588,11 +60589,7 @@ var render = function() {
                           "\n                            出題開始\n                        "
                         )
                       ]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: { type: "hidden", name: "_token", value: "" }
-                    })
+                    )
                   ],
                   2
                 )
@@ -60635,11 +60632,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "ranking-radio",
-                      attrs: {
-                        type: "radio",
-                        name: "ranking-radio",
-                        value: "2"
-                      },
+                      attrs: { type: "radio", value: "2" },
                       domProps: { checked: _vm._q(_vm.rankingType, "2") },
                       on: {
                         change: function($event) {
@@ -60661,11 +60654,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "ranking-radio",
-                      attrs: {
-                        type: "radio",
-                        name: "ranking-radio",
-                        value: "3"
-                      },
+                      attrs: { type: "radio", value: "3" },
                       domProps: { checked: _vm._q(_vm.rankingType, "3") },
                       on: {
                         change: function($event) {
@@ -60742,18 +60731,16 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("the-sidebar"),
-            _vm._v(" "),
-            _c("notifications")
+            _c("the-sidebar")
           ],
           1
-        )
-      ]),
-      _vm._v(" "),
-      _c("the-footer")
-    ],
-    1
-  )
+        ),
+        _vm._v(" "),
+        _c("notifications")
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -60798,20 +60785,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", {}, [
+    return _c("div", [
       _vm._v(
         "\n                            全項目チェック\n                            "
       ),
       _c(
         "button",
-        {
-          attrs: {
-            type: "button",
-            name: "check_all",
-            id: "check-all",
-            value: "1"
-          }
-        },
+        { attrs: { type: "button", name: "check_all", value: "1" } },
         [
           _vm._v(
             "\n                                ON\n                            "
@@ -60821,14 +60801,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c(
         "button",
-        {
-          attrs: {
-            type: "button",
-            name: "check_all_off",
-            id: "check-all-off",
-            value: "1"
-          }
-        },
+        { attrs: { type: "button", name: "check_all_off", value: "1" } },
         [
           _vm._v(
             "\n                                OFF\n                            "

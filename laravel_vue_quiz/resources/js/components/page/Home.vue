@@ -1,6 +1,5 @@
 <template>
     <div>
-        <the-header></the-header>
         <main>
             <div class="container">
                 <article class="col-md-8 col-xs-12">
@@ -26,25 +25,24 @@
                                 src="/images/directory-icon.png"
                             />出題設定
                         </h2>
-                        <form action="/quiz" method="post">
+                        <form>
                             <label
-                                v-for="(category, index) in category"
+                                v-for="(cate, index) in category"
                                 :key="index"
                             >
                                 <input
                                     type="checkbox"
                                     v-model="categories"
-                                    :value="category.id"
+                                    :value="cate.id"
+                                    checked
                                 />
-                                {{ category.name }}&ensp;
+                                {{ cate.name }}&ensp;
                             </label>
-
-                            <div class>
+                            <div>
                                 全項目チェック
                                 <button
                                     type="button"
                                     name="check_all"
-                                    id="check-all"
                                     value="1"
                                 >
                                     ON
@@ -52,7 +50,6 @@
                                 <button
                                     type="button"
                                     name="check_all_off"
-                                    id="check-all-off"
                                     value="1"
                                 >
                                     OFF
@@ -65,7 +62,6 @@
                             >
                                 出題開始
                             </button>
-                            <input type="hidden" name="_token" value />
                         </form>
                     </section>
                     <section class="home-quiz__ranking">
@@ -88,18 +84,16 @@
                                 <input
                                     class="ranking-radio"
                                     type="radio"
-                                    name="ranking-radio"
-                                    value="2"
                                     v-model="rankingType"
+                                    value="2"
                                 />今月
                             </label>
                             <label>
                                 <input
                                     class="ranking-radio"
                                     type="radio"
-                                    name="ranking-radio"
-                                    value="3"
                                     v-model="rankingType"
+                                    value="3"
                                 />今週
                             </label>
                         </div>
@@ -135,23 +129,18 @@
                     </section>
                 </article>
                 <the-sidebar></the-sidebar>
-                <notifications />
             </div>
+            <notifications />
         </main>
-        <the-footer></the-footer>
     </div>
 </template>
 
 <script>
-import TheHeader from "../layout/TheHeader";
-import TheFooter from "../layout/TheFooter";
 import TheSidebar from "../layout/TheSidebar";
 import BarChart from "../module/BarChart";
 
 export default {
     components: {
-        TheHeader,
-        TheFooter,
         TheSidebar,
         BarChart
     },
@@ -164,70 +153,86 @@ export default {
             week: {},
             month: {},
             total: {},
-            rankingType: "1"
+            rankingType: "1",
+            selectAll: false
         };
     },
-    props: {
-        auth: {
-            type: Object | Array
-        }
-    },
     mounted() {
-        this.$http.get("/api/information").then(response => {
-            this.information = response.data;
-        });
         this.$http.get("/api/category").then(response => {
             this.category = response.data;
+        });
+        this.$http.get("/api/information").then(response => {
+            this.information = response.data;
         });
         this.$http.get("/api/ranking").then(response => {
             this.rankingAlldata = response.data;
             this.setRanking();
         });
+        const referrer = document.referrer;
+        if (referrer.indexOf("/login") !== -1) {
+            this.displayNotification("ログインしました", "info");
+            this.resetReferrer();
+        } else if (referrer.indexOf("/register") !== -1) {
+            this.displayNotification("会員登録しました", "success");
+            this.resetReferrer();
+        }
     },
     methods: {
         goQuiz() {
             this.$router.push("/quiz?categories=" + this.categories);
+        },
+        setRanking() {
+            this.week = Object.assign({}, this.week, {
+                labels: this.rankingAlldata.weekRankingData.name,
+                datasets: [
+                    {
+                        label: ["最高得点率"],
+                        backgroundColor: "rgba(0, 170, 248, 0.47)",
+                        data: this.rankingAlldata.weekRankingData
+                            .percentage_correct_answer
+                    }
+                ]
+            });
+            this.month = Object.assign({}, this.month, {
+                labels: this.rankingAlldata.monthRankingData.name,
+                datasets: [
+                    {
+                        label: ["最高得点率"],
+                        backgroundColor: "rgba(0, 170, 248, 0.47)",
+                        data: this.rankingAlldata.monthRankingData
+                            .percentage_correct_answer
+                    }
+                ]
+            });
+            this.total = Object.assign({}, this.total, {
+                labels: this.rankingAlldata.totalRankingData.name,
+                datasets: [
+                    {
+                        label: ["最高得点率"],
+                        backgroundColor: "rgba(0, 170, 248, 0.47)",
+                        data: this.rankingAlldata.totalRankingData
+                            .percentage_correct_answer
+                    }
+                ]
+            });
+            this.$nextTick(() => {
+                this.$refs.totalChart.renderBarChart();
+                this.$refs.monthChart.renderBarChart();
+                this.$refs.weekChart.renderBarChart();
+            });
+        },
+        resetReferrer() {
+            Object.defineProperty(document, "referrer", {
+                value: location.href
+            });
+        },
+        displayNotification(text, type) {
+            this.$notify({
+                title: "お知らせ",
+                text: text,
+                type: type
+            });
         }
-    },
-    setRanking() {
-        this.week = Object.assign({}, this.week, {
-            labels: this.rankingAlldata.weekRankingData.name,
-            datasets: [
-                {
-                    label: ["最高得点率"],
-                    backgroundColor: "rgba(0, 170, 248, 0.47)",
-                    data: this.rankingAlldata.weekRankingData
-                        .percentage_correct_answer
-                }
-            ]
-        });
-        this.month = Object.assign({}, this.month, {
-            labels: this.rankingAlldata.monthRankingData.name,
-            datasets: [
-                {
-                    label: ["最高得点率"],
-                    backgroundColor: "rgba(0, 170, 248, 0.47)",
-                    data: this.rankingAlldata.monthRankingData
-                        .percentage_correct_answer
-                }
-            ]
-        });
-        this.total = Object.assign({}, this.total, {
-            labels: this.rankingAlldata.totalRankingData.name,
-            datasets: [
-                {
-                    label: ["最高得点率"],
-                    backgroundColor: "rgba(0, 170, 248, 0.47)",
-                    data: this.rankingAlldata.totalRankingData
-                        .percentage_correct_answer
-                }
-            ]
-        });
-        this.$nextTick(() => {
-            this.$refs.totalChart.renderBarChart();
-            this.$refs.monthChart.renderBarChart();
-            this.$refs.weekChart.renderBarChart();
-        });
     }
 };
 </script>
