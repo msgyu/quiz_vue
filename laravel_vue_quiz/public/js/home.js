@@ -314,6 +314,65 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -39698,9 +39757,9 @@ var render = function() {
                           }
                         }),
                         _vm._v(
-                          "\n              " +
+                          "\n                            " +
                             _vm._s(category.name) +
-                            " \n            "
+                            " \n                        "
                         )
                       ])
                     }),
@@ -39720,7 +39779,11 @@ var render = function() {
                           }
                         }
                       },
-                      [_vm._v("出題開始")]
+                      [
+                        _vm._v(
+                          "\n                            出題開始\n                        "
+                        )
+                      ]
                     ),
                     _vm._v(" "),
                     _c("input", {
@@ -39754,7 +39817,7 @@ var render = function() {
                         }
                       }
                     }),
-                    _vm._v("総合\n            ")
+                    _vm._v("総合\n                        ")
                   ]),
                   _vm._v(" "),
                   _c("label", [
@@ -39780,7 +39843,7 @@ var render = function() {
                         }
                       }
                     }),
-                    _vm._v("今月\n            ")
+                    _vm._v("今月\n                        ")
                   ]),
                   _vm._v(" "),
                   _c("label", [
@@ -39806,7 +39869,7 @@ var render = function() {
                         }
                       }
                     }),
-                    _vm._v("今週\n            ")
+                    _vm._v("今週\n                        ")
                   ])
                 ]),
                 _vm._v(" "),
@@ -39875,7 +39938,9 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("the-sidebar")
+            _c("the-sidebar"),
+            _vm._v(" "),
+            _c("notifications")
           ],
           1
         )
@@ -39897,17 +39962,19 @@ var staticRenderFns = [
           staticClass: "home-quiz__introduction-h2-logo",
           attrs: { src: "/images/what-is-mark.png" }
         }),
-        _vm._v("4 Answers Quizとは?\n          ")
+        _vm._v("4 Answers Quizとは?\n                    ")
       ]),
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\n            4 Answers\n            Quizとはビジネスマナーから一般常識に至るまで様々なクイズを4択で出題するWEBアプリです。\n          "
+          "\n                        4 Answers\n                        Quizとはビジネスマナーから一般常識に至るまで様々なクイズを4択で出題するWEBアプリです。\n                    "
         )
       ]),
       _vm._v(" "),
       _c("p", [
-        _vm._v("何度もトライしてみて正解率100%を目指してみてください。")
+        _vm._v(
+          "\n                        何度もトライしてみて正解率100%を目指してみてください。\n                    "
+        )
       ])
     ])
   },
@@ -39920,7 +39987,7 @@ var staticRenderFns = [
         staticClass: "home-quiz__setting-h2-logo",
         attrs: { src: "/images/directory-icon.png" }
       }),
-      _vm._v("出題設定\n          ")
+      _vm._v("出題設定\n                    ")
     ])
   },
   function() {
@@ -39928,7 +39995,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", {}, [
-      _vm._v("\n              全項目チェック\n              "),
+      _vm._v(
+        "\n                            全項目チェック\n                            "
+      ),
       _c(
         "button",
         {
@@ -39939,7 +40008,11 @@ var staticRenderFns = [
             value: "1"
           }
         },
-        [_vm._v("ON")]
+        [
+          _vm._v(
+            "\n                                ON\n                            "
+          )
+        ]
       ),
       _vm._v(" "),
       _c(
@@ -39952,7 +40025,11 @@ var staticRenderFns = [
             value: "1"
           }
         },
-        [_vm._v("OFF")]
+        [
+          _vm._v(
+            "\n                                OFF\n                            "
+          )
+        ]
       )
     ])
   },
@@ -39965,7 +40042,7 @@ var staticRenderFns = [
         staticClass: "home-quiz__ranking-h2-logo",
         attrs: { src: "/images/graph-icon.png" }
       }),
-      _vm._v("ランキング\n          ")
+      _vm._v("ランキング\n                    ")
     ])
   },
   function() {
@@ -39977,7 +40054,7 @@ var staticRenderFns = [
         staticClass: "home__notice-h2-logo",
         attrs: { src: "/images/news-icon.png" }
       }),
-      _vm._v("お知らせ情報\n          ")
+      _vm._v("お知らせ情報\n                    ")
     ])
   }
 ]
