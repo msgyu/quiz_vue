@@ -15,16 +15,16 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/quiz', function () {
-    return view('quiz.index');
+    return view('index');
+});
+Route::get('/mypage', function () {
+    return view('index');
+});
+Route::get('/keyword', function () {
+    return view('index');
 });
 Route::get('/register', function () {
     return view('auth.register.index');
-});
-Route::get('/mypage', function () {
-    return view('mypage.index');
-});
-Route::get('/keyword', function () {
-    return view('keyword.index');
 });
 Route::post('/register', 'Auth\RegisterController@register');
 Route::get('/login', function () {
