@@ -16,6 +16,7 @@ axios.defaults.headers.common["Authorization"] =
     document.querySelector('meta[name="api-token"]').getAttribute("content");
 
 Vue.use(SocialSharing);
+Vue.use(Loading);
 
 new Vue({
     router: router,
