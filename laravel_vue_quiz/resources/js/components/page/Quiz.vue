@@ -153,6 +153,7 @@ export default {
         this.$http.get(`/api/quiz?categories=${categories}`).then(response => {
             this.quizData = response.data;
             this.findNextQuiz(0);
+            loader.hide();
         });
     },
     methods: {
@@ -178,6 +179,7 @@ export default {
             }
         },
         findNextQuiz(quizNumber) {
+            window.scroll(0, 0);
             this.title = this.quizData[quizNumber].title;
             this.answers = [
                 this.quizData[quizNumber].answer.answer_1,
